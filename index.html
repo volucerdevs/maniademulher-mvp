@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mania de Mulher — Acessórios de Moda para Festas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0d0d0d;
+  --paper:#fffbfb;
+  --espresso:#3e1a0c;
+  --taupe:#795252;
+  --ink:#3d2a2e;
+  --rose:#9b5265;
+  --rose-dark:#7e3f51;
+  --rose-2:#c97b8a;
+  --blush:#ebd2d2;
+  --blush-tint:#fbf2f2;
+  --sale:#ee0036;
+  --green:#0eb836;
+  --line:#efe3e3;
+  --line-2:#e4d3d3;
+  --sans:'Jost',Arial,sans-serif;
+  --text:'Roboto',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--text);color:var(--ink);background:var(--paper);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 26px}
+.eyebrow{font-family:var(--sans);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);font-weight:500}
+h1,h2,h3,h4{font-family:var(--text);color:var(--espresso)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;padding:15px 32px;border:1.5px solid var(--black);background:var(--black);color:#fff;cursor:pointer;transition:.3s}
+.btn:hover{background:transparent;color:var(--black)}
+.btn--rose{background:var(--rose);border-color:var(--rose);color:#fff}
+.btn--rose:hover{background:var(--rose-dark);border-color:var(--rose-dark);color:#fff}
+.btn--ghost{background:transparent;color:var(--black)}
+.btn--ghost:hover{background:var(--black);color:#fff}
+.btn--lg{padding:17px 42px}
+.btn--block{width:100%}
+
+/* ===== Marquee ===== */
+.topbar{background:var(--black);color:#fff;overflow:hidden}
+.marquee{display:flex;white-space:nowrap;animation:slide 34s linear infinite}
+.marquee span{padding:10px 0;font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:300}
+.marquee b{color:#fff;font-weight:600}
+.marquee i{color:var(--rose-2);padding:0 20px;font-style:normal}
+
+/* ===== Header ===== */
+.header{position:sticky;top:0;z-index:60;background:rgba(255,251,251,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header__bar{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:20px}
+.header__side{display:flex;align-items:center;gap:18px;flex:1}
+.header__side.right{justify-content:flex-end}
+.brand{cursor:pointer;display:flex;flex-direction:column;align-items:center;line-height:1}
+.brand img{height:46px;width:auto}
+.brand__fallback{font-family:var(--text);font-weight:900;font-size:23px;letter-spacing:.02em;color:var(--espresso);text-transform:uppercase}
+.brand__sub{font-family:var(--sans);font-size:8.5px;letter-spacing:.4em;text-transform:uppercase;color:var(--rose);margin-top:4px}
+.ic{width:22px;height:22px;cursor:pointer;color:var(--black);transition:.2s}
+.ic:hover{color:var(--rose)}
+.searchbox{display:flex;align-items:center;gap:8px;border:1px solid var(--line-2);border-radius:30px;padding:8px 16px;background:#fff;max-width:300px;flex:1}
+.searchbox input{border:none;outline:none;font-family:var(--text);font-size:13px;width:100%;background:transparent;color:var(--ink)}
+.searchbox svg{width:17px;height:17px;color:var(--taupe);flex-shrink:0}
+.cart-dot{position:relative}
+.cart-dot b{position:absolute;top:-7px;right:-9px;background:var(--rose);color:#fff;font-family:var(--sans);font-size:9px;font-weight:600;width:16px;height:16px;border-radius:50%;display:grid;place-items:center}
+.nav{display:flex;gap:30px;justify-content:center;padding-bottom:13px}
+.nav a{font-family:var(--sans);font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);position:relative;padding:3px 0;font-weight:500}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--rose);transition:.3s}
+.nav a:hover{color:var(--rose)}
+.nav a:hover::after{width:100%}
+.nav a.sale{color:var(--sale)}
+.burger{display:none}
+
+/* ===== Views ===== */
+.view{display:none}
+.view.active{display:block}
+
+/* ===== Hero ===== */
+.hero{position:relative;background:var(--black);color:#fff;overflow:hidden}
+.hero__grid{display:grid;grid-template-columns:1.02fr .98fr;min-height:560px}
+.hero__copy{display:flex;flex-direction:column;justify-content:center;padding:70px 64px}
+.hero__copy .eyebrow{color:var(--rose-2)}
+.hero h1{font-family:var(--text);font-weight:900;font-size:54px;line-height:1.05;margin:20px 0 0;text-transform:uppercase;color:#fff;letter-spacing:.005em}
+.hero h1 em{font-style:normal;color:var(--rose-2);display:block;font-weight:300;font-size:38px;text-transform:none;margin-top:6px;font-family:var(--text)}
+.hero p{max-width:420px;margin:22px 0 34px;color:#cdbcbc;font-size:15px}
+.hero__cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero__media{position:relative}
+.hero__media img{width:100%;height:100%;object-fit:cover}
+.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--black),transparent 36%)}
+.hero__badge{position:absolute;right:34px;top:34px;background:var(--sale);color:#fff;font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:9px 16px;border-radius:30px;z-index:2}
+
+/* ===== Benefits ===== */
+.benefits{background:#fff;border-bottom:1px solid var(--line)}
+.benefits__grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.benefit{display:flex;align-items:center;gap:13px;padding:22px 20px;border-right:1px solid var(--line)}
+.benefit:last-child{border-right:none}
+.benefit svg{width:28px;height:28px;color:var(--rose);flex-shrink:0;stroke-width:1.3;fill:none;stroke:currentColor}
+.benefit b{display:block;font-family:var(--sans);font-size:12.5px;letter-spacing:.04em;color:var(--espresso);font-weight:600;text-transform:uppercase}
+.benefit small{font-size:12px;color:var(--taupe)}
+
+/* ===== Section heads ===== */
+.section{padding:74px 0}
+.sec-head{text-align:center;margin-bottom:42px}
+.sec-head h2{font-family:var(--text);font-size:34px;font-weight:900;color:var(--espresso);margin-top:9px;text-transform:uppercase;letter-spacing:.01em;line-height:1.1}
+.sec-head p{color:var(--taupe);margin-top:11px;font-size:15px}
+.divider{width:54px;height:2px;background:var(--rose);margin:16px auto 0}
+
+/* ===== Collections ===== */
+.collections{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.collection{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer;background:var(--black)}
+.collection img{width:100%;height:100%;object-fit:cover;transition:.7s;opacity:.9}
+.collection:hover img{transform:scale(1.06);opacity:1}
+.collection__c{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;background:linear-gradient(transparent 42%,rgba(13,13,13,.8));color:#fff}
+.collection__c small{font-family:var(--sans);font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--rose-2)}
+.collection__c h3{font-family:var(--text);font-size:22px;font-weight:700;margin-top:4px;color:#fff;text-transform:uppercase}
+.collection__c span{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-top:11px;border-bottom:1.5px solid var(--rose-2);padding-bottom:3px;width:fit-content}
+
+/* ===== Product cards ===== */
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.card{cursor:pointer;display:flex;flex-direction:column}
+.card__media{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--blush-tint)}
+.card__media img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.card:hover .card__media img{transform:scale(1.05)}
+.card__badges{position:absolute;top:11px;left:11px;display:flex;flex-direction:column;gap:6px;z-index:2}
+.tag{font-family:var(--sans);font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;padding:5px 9px;color:#fff;background:var(--black);border-radius:3px}
+.tag--off{background:var(--sale)}
+.tag--new{background:var(--rose)}
+.card__fav{position:absolute;top:11px;right:11px;width:34px;height:34px;background:rgba(255,251,251,.92);border-radius:50%;display:grid;place-items:center;opacity:0;transition:.3s;z-index:2}
+.card:hover .card__fav{opacity:1}
+.card__fav svg{width:17px;height:17px;color:var(--rose);fill:none;stroke:currentColor;stroke-width:1.6}
+.card__buy{position:absolute;left:0;right:0;bottom:0;background:var(--black);color:#fff;text-align:center;font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:13px;transform:translateY(101%);transition:.4s}
+.card__info{padding:15px 2px 0;text-align:center}
+.card__cat{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose)}
+.card__name{font-family:var(--text);font-size:14.5px;font-weight:500;color:var(--ink);margin:6px 0 9px;line-height:1.3;min-height:38px}
+.price{display:flex;align-items:baseline;gap:8px;justify-content:center}
+.price__old{font-size:13px;color:var(--taupe);text-decoration:line-through}
+.price__now{font-size:17px;color:var(--espresso);font-weight:700}
+.price__install{font-size:11.5px;color:var(--taupe);margin-top:5px}
+.price__install b{color:var(--rose);font-weight:600}
+
+/* ===== Category tiles ===== */
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:13px}
+.cat{text-align:center;cursor:pointer;padding:28px 8px;border:1px solid var(--line);background:#fff;transition:.3s;border-radius:6px}
+.cat:hover{border-color:var(--rose);transform:translateY(-4px)}
+.cat__ic{width:42px;height:42px;margin:0 auto 13px;color:var(--rose)}
+.cat__ic svg{width:100%;height:100%;stroke-width:1.1;fill:none;stroke:currentColor}
+.cat b{font-family:var(--sans);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--espresso);font-weight:500}
+
+/* ===== Editorial ===== */
+.editorial{background:var(--blush-tint)}
+.editorial__grid{display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.editorial__img{aspect-ratio:1/1;overflow:hidden}
+.editorial__img img{width:100%;height:100%;object-fit:cover}
+.editorial__c{padding:64px}
+.editorial__c h2{font-family:var(--text);font-size:34px;font-weight:900;margin:14px 0 16px;text-transform:uppercase;line-height:1.12;color:var(--espresso)}
+.editorial__c p{color:var(--taupe);max-width:440px;margin-bottom:15px;font-size:15px}
+.editorial__stats{display:flex;gap:40px;margin-top:30px}
+.editorial__stats b{font-family:var(--text);font-size:32px;font-weight:900;color:var(--rose);display:block}
+.editorial__stats small{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--taupe)}
+
+/* ===== Testimonials carousel ===== */
+.testi__viewport{overflow:hidden}
+.testi__track{display:flex;transition:transform .6s cubic-bezier(.65,.05,.36,1)}
+.testi__item{flex:0 0 calc((100% - 56px)/3);margin-right:28px}
+.testi-card{background:#fff;border:1px solid var(--line);padding:32px 28px;height:100%;display:flex;flex-direction:column;border-radius:6px}
+.testi-stars{color:var(--rose);font-size:15px;letter-spacing:2px;margin-bottom:14px}
+.testi-card .quote{font-family:var(--text);font-size:16px;line-height:1.5;color:var(--ink);margin-bottom:20px;flex:1}
+.testi-author{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:16px}
+.testi-author .av{width:42px;height:42px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;font-family:var(--text);font-weight:700;font-size:17px;flex-shrink:0}
+.testi-author b{display:block;font-size:13.5px;color:var(--espresso);font-weight:700}
+.testi-author small{font-size:12px;color:var(--taupe)}
+.testi-author .verified{margin-left:auto;font-family:var(--sans);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--green);display:flex;align-items:center;gap:4px;text-align:right}
+.testi-author .verified svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;flex-shrink:0}
+.testi__nav{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:34px}
+.testi__arrow{width:46px;height:46px;border:1px solid var(--line-2);background:#fff;border-radius:50%;display:grid;place-items:center;cursor:pointer;transition:.3s;color:var(--black)}
+.testi__arrow:hover{background:var(--rose);color:#fff;border-color:var(--rose)}
+.testi__arrow svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6}
+.testi__dots{display:flex;gap:8px}
+.testi__dots button{width:9px;height:9px;border-radius:50%;border:none;background:var(--line-2);cursor:pointer;padding:0;transition:.3s}
+.testi__dots button.active{background:var(--rose);width:24px;border-radius:5px}
+
+/* ===== VIP ===== */
+.vip{background:var(--black);color:#fff;text-align:center}
+.vip .eyebrow{color:var(--rose-2)}
+.vip h2{font-family:var(--text);font-size:34px;font-weight:900;margin:13px 0 11px;text-transform:uppercase;color:#fff}
+.vip p{color:#cdbcbc;max-width:470px;margin:0 auto 26px}
+.vip__form{display:flex;max-width:450px;margin:0 auto}
+.vip__form input{flex:1;background:transparent;border:1px solid #4a3838;color:#fff;padding:15px 17px;font-family:var(--text);font-size:13px;outline:none}
+.vip__form input::placeholder{color:#9a8585}
+.vip__form button{border:none}
+
+/* ===== Footer ===== */
+.footer{background:#fff;color:var(--ink);padding:64px 0 0;border-top:1px solid var(--line)}
+.footer__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:38px;padding-bottom:46px}
+.footer__brand img{height:42px;margin-bottom:14px}
+.footer__brand p{font-size:13px;color:var(--taupe);margin-bottom:16px;max-width:280px}
+.footer h4{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--espresso);margin-bottom:17px;font-weight:600}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer ul a{font-size:13px;color:var(--taupe);transition:.2s}
+.footer ul a:hover{color:var(--rose)}
+.footer__contact p{font-size:13px;color:var(--taupe);margin-bottom:11px;display:flex;gap:9px;align-items:flex-start}
+.footer__contact svg{width:16px;height:16px;color:var(--rose);flex-shrink:0;margin-top:2px;fill:none;stroke:currentColor;stroke-width:1.4}
+.socials{display:flex;gap:11px;margin-top:16px}
+.socials a{width:38px;height:38px;border:1px solid var(--line-2);display:grid;place-items:center;border-radius:50%;transition:.3s;color:var(--ink)}
+.socials a:hover{background:var(--rose);color:#fff;border-color:var(--rose)}
+.socials svg{width:17px;height:17px}
+.footer__pay{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:22px 0;border-top:1px solid var(--line)}
+.footer__pay .tags{display:flex;gap:7px;flex-wrap:wrap}
+.footer__pay .tags span{font-family:var(--sans);font-size:10px;letter-spacing:.04em;border:1px solid var(--line-2);padding:5px 9px;color:var(--taupe);text-transform:uppercase}
+.footer__bottom{text-align:center;font-size:11.5px;color:var(--taupe);padding:20px 0;border-top:1px solid var(--line)}
+.footer__bottom a{color:var(--rose)}
+
+/* ===== Breadcrumb ===== */
+.crumb{padding:20px 0;font-family:var(--sans);font-size:12px;letter-spacing:.04em;color:var(--taupe)}
+.crumb a:hover{color:var(--rose)}
+.crumb span{color:var(--rose)}
+
+/* ===== Collection page ===== */
+.col-hero{background:var(--black);color:#fff;text-align:center;padding:56px 0}
+.col-hero .eyebrow{color:var(--rose-2)}
+.col-hero h1{font-family:var(--text);font-size:40px;font-weight:900;margin:11px 0 9px;text-transform:uppercase;color:#fff}
+.col-hero p{color:#cdbcbc;max-width:520px;margin:0 auto}
+.col-layout{display:grid;grid-template-columns:236px 1fr;gap:38px;padding:44px 0}
+.filters h4{font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;color:var(--espresso);font-weight:600}
+.filter-block{padding-bottom:24px;margin-bottom:24px;border-bottom:1px solid var(--line)}
+.filter-block label{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink);padding:6px 0;cursor:pointer}
+.filter-block input{accent-color:var(--rose)}
+.swatches{display:flex;gap:9px;flex-wrap:wrap}
+.swatch{width:26px;height:26px;border-radius:50%;border:1px solid var(--line-2);cursor:pointer;transition:.2s}
+.swatch:hover{transform:scale(1.12);box-shadow:0 0 0 2px var(--rose)}
+.col-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.col-toolbar small{color:var(--taupe);font-size:13px}
+.col-toolbar select{font-family:var(--sans);font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line-2);padding:10px 14px;background:#fff;color:var(--ink)}
+
+/* ================= PRODUCT PAGE (PDP) ================= */
+.pdp{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;padding:14px 0 60px}
+.pdp__gallery{display:grid;grid-template-columns:72px 1fr;gap:14px}
+.pdp__thumbs{display:flex;flex-direction:column;gap:11px}
+.pdp__thumbs img{aspect-ratio:1/1;object-fit:cover;border:1px solid var(--line);cursor:pointer;opacity:.55;transition:.25s;border-radius:4px}
+.pdp__thumbs img.active,.pdp__thumbs img:hover{opacity:1;border-color:var(--rose)}
+.pdp__main{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--blush-tint);border-radius:6px}
+.pdp__main img{width:100%;height:100%;object-fit:cover}
+.pdp__main .badges{position:absolute;top:16px;left:16px;display:flex;gap:7px;z-index:2}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.pill{font-family:var(--sans);font-size:11px;letter-spacing:.04em;color:var(--rose-dark);background:var(--blush-tint);border:1px solid var(--blush);padding:6px 12px;border-radius:30px;display:flex;align-items:center;gap:6px}
+.pill svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.6}
+.pdp__info .eyebrow{color:var(--rose)}
+.pdp__info h1{font-family:var(--text);font-size:30px;font-weight:700;color:var(--espresso);line-height:1.15;margin:8px 0 12px;text-transform:none}
+.rating{display:flex;align-items:center;gap:9px;margin-bottom:18px;font-size:13px}
+.rating .s{color:var(--rose);letter-spacing:2px;font-size:15px}
+.rating span{color:var(--taupe)}
+.pdp__pricebox{background:var(--blush-tint);border:1px solid var(--line);border-radius:8px;padding:20px;margin-bottom:22px}
+.pdp__price{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap}
+.pdp__price .old{font-size:16px;color:var(--taupe);text-decoration:line-through}
+.pdp__price .now{font-family:var(--text);font-size:34px;color:var(--espresso);font-weight:900;line-height:1}
+.pdp__price .off{background:var(--sale);color:#fff;font-family:var(--sans);font-size:11px;letter-spacing:.06em;padding:4px 9px;text-transform:uppercase;border-radius:4px;font-weight:600}
+.pdp__pay{font-size:13.5px;color:var(--taupe);margin-top:9px}
+.pdp__pay b{color:var(--espresso);font-weight:700}
+.pdp__pix{font-size:13.5px;color:var(--green);font-weight:600;margin-top:4px;display:flex;align-items:center;gap:6px}
+.pdp__pix svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.6}
+.pdp__opt{margin-bottom:20px}
+.pdp__opt p{font-family:var(--sans);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--espresso);margin-bottom:11px;font-weight:600}
+.pdp__opt p b{color:var(--rose);font-weight:600}
+.opt-row{display:flex;gap:9px;flex-wrap:wrap}
+.opt{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line-2);padding:9px 15px;font-size:13px;cursor:pointer;transition:.2s;background:#fff;border-radius:4px}
+.opt:hover{border-color:var(--rose)}
+.opt.active{border-color:var(--black);background:var(--black);color:#fff}
+.opt i{width:15px;height:15px;border-radius:50%;display:inline-block;border:1px solid rgba(0,0,0,.15)}
+.qty-cart{display:flex;gap:12px;margin-bottom:12px}
+.qty{display:flex;align-items:center;border:1.5px solid var(--line-2);border-radius:4px}
+.qty button{width:44px;height:50px;border:none;background:transparent;font-size:19px;cursor:pointer;color:var(--espresso)}
+.qty span{width:38px;text-align:center;font-size:15px;font-weight:500}
+.qty-cart .btn{flex:1}
+.pdp__buynow{margin-bottom:20px}
+.pdp__ship{display:flex;gap:11px;border:1px solid var(--line);padding:14px;background:#fff;border-radius:6px;margin-bottom:20px;align-items:center}
+.pdp__ship svg{width:23px;height:23px;color:var(--rose);flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.3}
+.pdp__ship small{font-size:12.5px;color:var(--taupe)}
+.pdp__ship b{color:var(--espresso);font-weight:600}
+.pdp__trust{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:1px solid var(--line);padding-top:20px}
+.pdp__trust div{display:flex;gap:9px;align-items:center;font-size:12.5px;color:var(--ink)}
+.pdp__trust svg{width:19px;height:19px;color:var(--rose);flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.4}
+
+/* PDP — accordion */
+.acc{border-top:1px solid var(--line);grid-column:1/-1;max-width:880px;margin:0 auto;width:100%}
+.acc__item{border-bottom:1px solid var(--line)}
+.acc__head{display:flex;justify-content:space-between;align-items:center;padding:20px 4px;cursor:pointer;font-family:var(--sans);font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--espresso);font-weight:500}
+.acc__head svg{width:18px;height:18px;transition:.3s;color:var(--rose);fill:none;stroke:currentColor;stroke-width:1.6}
+.acc__item.open .acc__head svg{transform:rotate(45deg)}
+.acc__body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.acc__body-in{padding:0 4px 24px;color:var(--taupe);font-size:14px}
+.acc__body-in b{color:var(--espresso)}
+.acc__body-in ul{margin:10px 0 0 18px}
+.acc__body-in li{margin-bottom:6px}
+.acc__body-in table{width:100%;border-collapse:collapse;margin-top:6px}
+.acc__body-in td{padding:8px 10px;border:1px solid var(--line);font-size:13px}
+.acc__body-in td:first-child{color:var(--espresso);font-weight:500;width:40%;background:var(--blush-tint)}
+
+/* PDP — benefit blocks */
+.benefit-blocks{background:var(--blush-tint);padding:70px 0}
+.bb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.bb{background:#fff;border:1px solid var(--line);border-radius:8px;padding:30px 24px;text-align:center}
+.bb__ic{width:54px;height:54px;border-radius:50%;background:var(--blush-tint);display:grid;place-items:center;margin:0 auto 16px;color:var(--rose)}
+.bb__ic svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.4}
+.bb h3{font-family:var(--text);font-size:17px;font-weight:700;color:var(--espresso);margin-bottom:8px}
+.bb p{font-size:13.5px;color:var(--taupe)}
+
+/* PDP — statement */
+.statement{text-align:center;padding:80px 0;background:var(--black);color:#fff}
+.statement h2{font-family:var(--text);font-size:40px;font-weight:900;text-transform:uppercase;color:#fff;line-height:1.15;max-width:760px;margin:0 auto}
+.statement h2 em{font-style:normal;color:var(--rose-2);font-weight:300;text-transform:none;display:block;font-size:30px;margin-top:8px}
+.statement__stats{display:flex;justify-content:center;gap:64px;margin-top:46px;flex-wrap:wrap}
+.statement__stats b{font-family:var(--text);font-size:42px;font-weight:900;color:var(--rose-2);display:block;line-height:1}
+.statement__stats small{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#cdbcbc;margin-top:8px;display:block}
+
+/* PDP — steps */
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.step{text-align:center}
+.step__n{font-family:var(--text);font-size:14px;font-weight:900;color:#fff;background:var(--rose);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;margin:0 auto 16px}
+.step h3{font-family:var(--text);font-size:18px;font-weight:700;color:var(--espresso);margin-bottom:8px}
+.step p{font-size:14px;color:var(--taupe);max-width:260px;margin:0 auto}
+
+/* PDP — FAQ */
+.faq{max-width:780px;margin:0 auto}
+
+/* PDP — sticky add bar */
+.stickybar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line-2);box-shadow:0 -6px 24px rgba(62,26,12,.08);transform:translateY(110%);transition:.4s;z-index:70}
+.stickybar.show{transform:translateY(0)}
+.stickybar__in{max-width:1240px;margin:0 auto;padding:12px 26px;display:flex;align-items:center;gap:16px}
+.stickybar img{width:52px;height:52px;object-fit:cover;border-radius:5px}
+.stickybar .nm{font-family:var(--text);font-weight:600;font-size:14px;color:var(--espresso)}
+.stickybar .pr{font-size:13px;color:var(--taupe)}
+.stickybar .pr b{color:var(--espresso)}
+.stickybar .btn{margin-left:auto}
+
+.related{background:#fff;padding:66px 0;border-top:1px solid var(--line)}
+
+@media(max-width:1080px){
+  .hero h1{font-size:44px}.hero h1 em{font-size:30px}
+  .collections,.products,.bb-grid{grid-template-columns:repeat(3,1fr)}
+  .cats{grid-template-columns:repeat(3,1fr)}
+  .bb-grid .bb:nth-child(4){display:none}
+}
+@media(max-width:860px){
+  .nav,.searchbox,.header__side .hide{display:none}
+  .burger{display:grid}
+  .hero__grid{grid-template-columns:1fr}
+  .hero__media{min-height:340px}
+  .hero__copy{padding:48px 30px}
+  .benefits__grid{grid-template-columns:1fr 1fr}
+  .benefit:nth-child(2){border-right:none}
+  .editorial__grid,.pdp,.col-layout{grid-template-columns:1fr}
+  .editorial__c,.editorial__img{order:2}
+  .editorial__c{padding:44px 30px}
+  .col-layout .filters{display:none}
+  .pdp__gallery{grid-template-columns:1fr}
+  .pdp__thumbs{flex-direction:row;order:2;overflow:auto}
+  .pdp__thumbs img{width:64px;flex-shrink:0}
+  .bb-grid,.steps-grid{grid-template-columns:1fr}
+  .bb-grid .bb:nth-child(4){display:block}
+  .footer__grid{grid-template-columns:1fr 1fr}
+  .testi__item{flex:0 0 calc((100% - 28px)/2)}
+  .statement h2{font-size:30px}.statement h2 em{font-size:22px}
+  .statement__stats{gap:38px}
+}
+@media(max-width:560px){
+  .testi__item{flex:0 0 100%;margin-right:0}
+  .collections,.products,.cats{grid-template-columns:repeat(2,1fr)}
+  .hero h1{font-size:36px}
+  .sec-head h2{font-size:26px}
+  .footer__grid{grid-template-columns:1fr}
+  .pdp__trust{grid-template-columns:1fr}
+  .wrap{padding:0 16px}
+  .section{padding:54px 0}
+  .stickybar .nm{display:none}
+}
+
+/* =================================================================
+   POLISH LAYER — radius, sombras, brilhos, reflexos e animações
+   ================================================================= */
+:root{
+  --r-sm:12px; --r:18px; --r-lg:26px; --r-xl:34px; --r-pill:50px;
+  --sh-sm:0 6px 18px rgba(62,26,12,.07);
+  --sh:0 14px 34px rgba(126,63,81,.12);
+  --sh-lg:0 24px 60px rgba(126,63,81,.18);
+  --sh-rose:0 18px 40px rgba(155,82,101,.28);
+  --glass:rgba(255,255,255,.65);
+}
+body{background:
+  radial-gradient(1100px 520px at 88% -120px, rgba(201,123,138,.10), transparent 60%),
+  radial-gradient(900px 480px at -10% 18%, rgba(235,210,210,.34), transparent 60%),
+  var(--paper);
+  background-attachment:fixed;
+}
+
+/* ---- keyframes ---- */
+@keyframes slide{to{transform:translateX(-50%)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes shine{to{transform:translateX(260%) skewX(-18deg)}}
+@keyframes shimmer{0%{background-position:-180% 0}100%{background-position:180% 0}}
+@keyframes pulseGlow{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:.9;transform:scale(1.08)}}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+
+/* ---- scroll reveal ---- */
+.reveal{opacity:0}
+.reveal.in{animation:fadeUp .9s cubic-bezier(.16,.84,.44,1) forwards}
+
+/* ---- rounded + shadow: buttons ---- */
+.btn{border-radius:var(--r-pill);position:relative;overflow:hidden;box-shadow:0 8px 20px rgba(13,13,13,.10);transition:transform .3s,box-shadow .3s,background .3s,color .3s}
+.btn--rose{box-shadow:var(--sh-rose)}
+.btn:hover{transform:translateY(-2px)}
+.btn::after{content:"";position:absolute;top:-20%;left:-60%;width:40%;height:140%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transform:translateX(0) skewX(-18deg);pointer-events:none}
+.btn:hover::after{animation:shine .8s ease}
+
+/* ---- search / inputs ---- */
+.searchbox{border-radius:var(--r-pill);box-shadow:var(--sh-sm)}
+.vip__form{border-radius:var(--r-pill);overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.vip__form input{border:1px solid #4a3838;border-right:none}
+.vip__form .btn{box-shadow:none}
+.col-toolbar select{border-radius:var(--r-pill)}
+
+/* ---- product cards ---- */
+.card{border-radius:var(--r-lg);padding:10px;background:rgba(255,255,255,.55);box-shadow:var(--sh-sm);transition:transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s;backdrop-filter:blur(4px)}
+.card:hover{transform:translateY(-8px);box-shadow:var(--sh-lg)}
+.card__media{border-radius:var(--r);box-shadow:inset 0 0 0 1px rgba(155,82,101,.06)}
+.card__media::before{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);z-index:3;opacity:0;transition:opacity .2s;pointer-events:none}
+.card:hover .card__media::before{opacity:1;animation:shine .9s ease}
+.card:hover .card__media img{transform:scale(1.08)}
+.card__info{padding-bottom:6px}
+.card__btn{margin-top:15px;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:13px;border:1.5px solid var(--rose);background:var(--rose);color:#fff;border-radius:var(--r-pill);cursor:pointer;box-shadow:0 10px 22px rgba(155,82,101,.26);transition:transform .3s,box-shadow .3s,background .3s,border-color .3s;position:relative;overflow:hidden}
+.card__btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5}
+.card__btn:hover{background:var(--rose-dark);border-color:var(--rose-dark);transform:translateY(-2px);box-shadow:0 15px 30px rgba(155,82,101,.36)}
+.card__btn::after{content:"";position:absolute;top:-20%;left:-60%;width:40%;height:140%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);pointer-events:none}
+.card__btn:hover::after{animation:shine .8s ease}
+.tag{box-shadow:0 4px 12px rgba(238,0,54,.22);border-radius:30px}
+.tag--new{box-shadow:0 4px 12px rgba(155,82,101,.25)}
+.card__fav{box-shadow:var(--sh-sm)}
+.card__fav:hover{background:#fff}
+
+/* ---- collections ---- */
+.collection{border-radius:var(--r-lg);box-shadow:var(--sh);transition:transform .45s,box-shadow .45s}
+.collection:hover{transform:translateY(-6px);box-shadow:var(--sh-lg)}
+.collection__c span{transition:gap .3s,letter-spacing .3s}
+.collection:hover .collection__c span{letter-spacing:.26em}
+
+/* ---- image category tiles ---- */
+.cat{padding:0;border:none;border-radius:var(--r-lg);overflow:hidden;position:relative;aspect-ratio:4/5;box-shadow:var(--sh-sm)}
+.cat:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.6s;opacity:.96}
+.cat:hover img{transform:scale(1.07)}
+.cat__overlay{position:absolute;inset:0;background:linear-gradient(transparent 38%,rgba(13,13,13,.72));display:flex;flex-direction:column;justify-content:flex-end;padding:18px}
+.cat__overlay b{color:#fff;font-family:var(--sans);font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.cat__overlay i{font-style:normal;color:var(--rose-2);font-family:var(--sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-top:3px}
+
+/* ---- benefits as soft chips ---- */
+.benefits__grid{gap:0}
+.benefit svg{padding:8px;background:var(--blush-tint);border-radius:var(--r-sm);width:38px;height:38px;box-sizing:border-box}
+
+/* ---- editorial ---- */
+.editorial{border-radius:0}
+.editorial__img{position:relative}
+.editorial__img img{border-radius:0}
+.editorial__c h2{position:relative}
+
+/* ---- hero glow orbs + rounded media ---- */
+.hero{isolation:isolate}
+.hero__media img{border-radius:0}
+.hero::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(201,123,138,.55),transparent 68%);top:-90px;left:36%;filter:blur(10px);animation:pulseGlow 7s ease-in-out infinite;z-index:0;pointer-events:none}
+.hero__copy,.hero__media{position:relative;z-index:1}
+.hero__badge{box-shadow:0 10px 26px rgba(238,0,54,.4);background:linear-gradient(90deg,#ee0036,#ff5a7d,#ee0036);background-size:200% 100%;animation:shimmer 3.5s linear infinite}
+.hero .btn--rose{box-shadow:0 16px 40px rgba(201,123,138,.45)}
+
+/* ---- testimonials: glossy sphere avatar + card ---- */
+.testi-card{border-radius:var(--r-lg);box-shadow:var(--sh-sm);transition:transform .4s,box-shadow .4s}
+.testi-card:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+.testi-author .av{position:relative;overflow:hidden;width:52px;height:52px;font-size:19px;
+  background:radial-gradient(circle at 32% 26%, #f0c4cb 0%, #d293a0 34%, #9b5265 76%, #7e3f51 100%);
+  box-shadow:inset 0 2px 6px rgba(255,255,255,.55), inset 0 -7px 14px rgba(126,63,81,.55), 0 12px 22px rgba(155,82,101,.4);
+  color:#fff;text-shadow:0 1px 2px rgba(126,63,81,.5)}
+.testi-author .av::after{content:"";position:absolute;top:7%;left:14%;width:54%;height:38%;border-radius:50%;background:radial-gradient(circle at 40% 30%,rgba(255,255,255,.85),transparent 70%);filter:blur(1px)}
+
+/* ---- PDP polish ---- */
+.pdp__main{border-radius:var(--r-xl);box-shadow:var(--sh-lg)}
+.pdp__main img{transition:transform .6s}
+.pdp__main:hover img{transform:scale(1.04)}
+.pdp__thumbs img{border-radius:var(--r-sm)}
+.pdp__pricebox{border-radius:var(--r);box-shadow:var(--sh-sm)}
+.pill{box-shadow:0 4px 12px rgba(155,82,101,.12)}
+.pdp__ship{border-radius:var(--r-sm)}
+.bb{border-radius:var(--r-lg);box-shadow:var(--sh-sm);transition:transform .4s,box-shadow .4s}
+.bb:hover{transform:translateY(-7px);box-shadow:var(--sh)}
+.bb__ic{box-shadow:inset 0 2px 5px rgba(255,255,255,.6),0 8px 18px rgba(155,82,101,.18)}
+.step__n{box-shadow:var(--sh-rose)}
+.acc{border-radius:var(--r);overflow:hidden;background:rgba(255,255,255,.5);box-shadow:var(--sh-sm)}
+.acc__item:last-child{border-bottom:none}
+.acc__head,.acc__body-in{padding-left:22px;padding-right:22px}
+.stickybar{border-radius:var(--r-lg) var(--r-lg) 0 0}
+.stickybar img{border-radius:var(--r-sm)}
+
+/* ---- lookbook gallery ---- */
+.lookbook{padding:74px 0;overflow:hidden}
+.lb-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.lb-item{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:var(--r);box-shadow:var(--sh-sm);cursor:pointer}
+.lb-item img{width:100%;height:100%;object-fit:cover;transition:.7s}
+.lb-item:hover img{transform:scale(1.1)}
+.lb-item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(126,63,81,.45));opacity:0;transition:.4s}
+.lb-item:hover::after{opacity:1}
+.lb-item .ig{position:absolute;left:14px;bottom:12px;color:#fff;display:flex;align-items:center;gap:7px;font-family:var(--sans);font-size:12px;letter-spacing:.06em;opacity:0;transform:translateY(8px);transition:.4s;z-index:2}
+.lb-item:hover .ig{opacity:1;transform:none}
+.lb-item .ig svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5}
+@media(max-width:860px){.lb-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:560px){.lb-grid{grid-template-columns:repeat(3,1fr);gap:10px}}
+
+/* soft section separation */
+.section,.benefit-blocks,.lookbook{position:relative}
+
+/* ===================== BANNERS GRID ===================== */
+.banner-hero{display:block;position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:24/8;box-shadow:var(--sh);margin-bottom:18px;cursor:pointer}
+.banner-hero img{width:100%;height:100%;object-fit:cover;transition:.8s}
+.banner-hero:hover img{transform:scale(1.05)}
+.banner-hero__c{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 58px;background:linear-gradient(90deg,rgba(13,13,13,.62),rgba(13,13,13,.15) 48%,transparent 66%);color:#fff}
+.banner-hero__c h2{font-family:var(--text);font-weight:900;font-size:42px;text-transform:uppercase;color:#fff;margin:6px 0 6px;line-height:1}
+.banner-hero__c p{color:#ecdede;margin-bottom:18px;max-width:360px}
+.banner-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.banner-item{position:relative;display:block;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;box-shadow:var(--sh-sm);cursor:pointer}
+.banner-item img{width:100%;height:100%;object-fit:cover;transition:.8s}
+.banner-item:hover img{transform:scale(1.08)}
+.banner-item__c{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;background:linear-gradient(transparent 36%,rgba(13,13,13,.74));color:#fff}
+.banner-item__c h3{font-family:var(--text);font-weight:900;font-size:23px;text-transform:uppercase;color:#fff;margin:4px 0 13px;line-height:1.05}
+.banner-hero__c .eyebrow,.banner-item__c .eyebrow{color:var(--rose-2)}
+.banner-btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;background:#fff;color:var(--espresso);padding:12px 24px;border-radius:var(--r-pill);width:fit-content;box-shadow:0 8px 18px rgba(0,0,0,.2);transition:transform .3s,background .3s,color .3s}
+.banner-item .banner-btn{background:var(--rose);color:#fff;padding:10px 20px}
+.banner-hero:hover .banner-btn,.banner-item:hover .banner-btn{transform:translateY(-2px)}
+@media(max-width:860px){
+  .banner-row{grid-template-columns:1fr}
+  .banner-hero{aspect-ratio:16/10}
+  .banner-hero__c{padding:0 30px;background:linear-gradient(90deg,rgba(13,13,13,.7),rgba(13,13,13,.2))}
+  .banner-hero__c h2{font-size:30px}
+}
+
+/* ===================== VIDEOS / REELS GRID ===================== */
+.videos{padding:74px 0;background:var(--blush-tint)}
+.video-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.video-item{position:relative;aspect-ratio:9/16;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh);cursor:pointer;background:#191112}
+.video-item img{width:100%;height:100%;object-fit:cover;opacity:.92;transition:.7s}
+.video-item:hover img{transform:scale(1.07);opacity:1}
+.video-item::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 46%,rgba(13,13,13,.74));pointer-events:none}
+.video-play-glow{position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;border:2px solid rgba(255,255,255,.55);z-index:1;animation:pulseGlow 2.6s ease-in-out infinite}
+.video-play{position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.94);display:grid;place-items:center;z-index:2;box-shadow:0 10px 26px rgba(0,0,0,.4);transition:transform .3s,background .3s}
+.video-play::before{content:"";width:0;height:0;border-left:17px solid var(--rose);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:4px}
+.video-item:hover .video-play{transform:translate(-50%,-50%) scale(1.12);background:#fff}
+.video-cap{position:absolute;left:15px;right:15px;bottom:15px;z-index:2;color:#fff}
+.video-cap b{display:flex;align-items:center;gap:6px;font-family:var(--sans);font-size:12px;letter-spacing:.04em;font-weight:500}
+.video-cap b svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.5}
+.video-cap small{font-size:11px;color:#e6d8d8;margin-top:3px;display:block}
+.video-tag{position:absolute;top:13px;left:13px;z-index:3;background:var(--sale);color:#fff;font-family:var(--sans);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:5px 10px;border-radius:30px;display:flex;align-items:center;gap:5px}
+.video-tag i{width:6px;height:6px;border-radius:50%;background:#fff;display:inline-block;animation:pulseGlow 1.6s ease-in-out infinite}
+@media(max-width:860px){.video-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
+
+/* ===================== PRODUCT CAROUSEL ===================== */
+.pcar{position:relative}
+.pcar__viewport{overflow:hidden;padding:12px 0 16px}
+.pcar__track{display:flex;transition:transform .6s cubic-bezier(.65,.05,.36,1)}
+.pcar__item{flex:0 0 calc((100% - 72px)/4);margin-right:24px}
+.pcar__item .card{margin:0}
+.pcar__arrow{position:absolute;top:36%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid var(--line-2);box-shadow:var(--sh);display:grid;place-items:center;cursor:pointer;z-index:6;color:var(--black);transition:background .3s,color .3s,transform .3s,opacity .3s}
+.pcar__arrow:hover{background:var(--rose);color:#fff;border-color:var(--rose)}
+.pcar__arrow.disabled{opacity:.32;pointer-events:none}
+.pcar__arrow svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7}
+.pcar__prev{left:-12px}
+.pcar__next{right:-12px}
+.pcar__dots{display:flex;gap:8px;justify-content:center;margin-top:22px}
+.pcar__dots button{width:9px;height:9px;border-radius:50%;border:none;background:var(--line-2);cursor:pointer;padding:0;transition:.3s}
+.pcar__dots button.active{background:var(--rose);width:24px;border-radius:5px}
+@media(max-width:1080px){.pcar__item{flex-basis:calc((100% - 48px)/3)}}
+@media(max-width:860px){.pcar__item{flex-basis:calc((100% - 24px)/2)}.pcar__arrow{top:32%}}
+@media(max-width:560px){.pcar__item{flex-basis:100%}.pcar__prev{left:-6px}.pcar__next{right:-6px}}
+
+/* ===================== PDP IMAGE GALLERY (bento) ===================== */
+.pgal{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:16px;aspect-ratio:2/1}
+.pgal-item{position:relative;overflow:hidden;border-radius:var(--r-lg);box-shadow:var(--sh-sm);cursor:pointer}
+.pgal-item:first-child{grid-column:1/3;grid-row:1/3}
+.pgal-item img{width:100%;height:100%;object-fit:cover;transition:.7s}
+.pgal-item:hover img{transform:scale(1.07)}
+.pgal-item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(126,63,81,.34));opacity:0;transition:.4s}
+.pgal-item:hover::after{opacity:1}
+.pgal-item::before{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);z-index:2;opacity:0;pointer-events:none}
+.pgal-item:hover::before{opacity:1;animation:shine .9s ease}
+@media(max-width:860px){
+  .pgal{grid-template-columns:repeat(2,1fr);grid-template-rows:none;aspect-ratio:auto}
+  .pgal-item{aspect-ratio:1/1}
+  .pgal-item:first-child{grid-column:1/3;grid-row:auto;aspect-ratio:16/10}
+}
+@media(max-width:560px){.pgal{gap:10px}.pgal-item:first-child{aspect-ratio:4/3}}
+
+/* ===================== GRUPO VIP HEADER BUTTON ===================== */
+.vip-btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#fff;padding:10px 20px 10px 11px;border:none;border-radius:var(--r-pill);cursor:pointer;background:linear-gradient(95deg,#d9a48f,var(--rose-2),var(--rose));background-size:170% 100%;background-position:0 0;box-shadow:0 10px 24px rgba(155,82,101,.32);transition:background-position .5s,transform .3s,box-shadow .3s;white-space:nowrap}
+.vip-btn:hover{background-position:100% 0;transform:translateY(-2px);box-shadow:0 14px 30px rgba(155,82,101,.42)}
+.vip-btn .wa{width:25px;height:25px;border-radius:50%;background:#fff;display:grid;place-items:center;flex-shrink:0}
+.vip-btn .wa svg{width:15px;height:15px;fill:var(--rose);stroke:none}
+@media(max-width:560px){
+  .vip-btn{padding:9px;gap:0}
+  .vip-btn span{display:none}
+}
+
+/* ===================== BENEFITS — versão premium ===================== */
+.benefits{background:linear-gradient(180deg,#ffffff 0%,#fdf7f4 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative}
+.benefits::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--rose-2) 30%,var(--rose) 50%,var(--rose-2) 70%,transparent);opacity:.65}
+.benefit{justify-content:center;gap:16px;padding:32px 22px;border-right:none;position:relative;transition:transform .35s}
+.benefit:hover{transform:translateY(-3px)}
+.benefit:not(:last-child)::after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:44px;background:linear-gradient(180deg,transparent,var(--line-2) 20%,var(--line-2) 80%,transparent)}
+.benefit svg{width:50px;height:50px;padding:13px;border-radius:50%;background:radial-gradient(circle at 34% 28%,#ffffff,var(--blush) 96%);box-shadow:inset 0 1px 2px rgba(255,255,255,.9),inset 0 -3px 7px rgba(155,82,101,.12),0 9px 20px rgba(155,82,101,.2);color:var(--rose);stroke-width:1.35;transition:transform .35s,box-shadow .35s}
+.benefit:hover svg{transform:scale(1.06);box-shadow:inset 0 1px 2px rgba(255,255,255,.9),0 12px 26px rgba(155,82,101,.3)}
+.benefit b{font-size:13px;letter-spacing:.1em}
+.benefit small{font-size:12px;color:var(--taupe);letter-spacing:.01em}
+@media(max-width:560px){.benefit{padding:24px 16px;gap:13px}.benefit svg{width:44px;height:44px;padding:11px}}
+</style>
+</head>
+<body>
+
+<!-- ===== MARQUEE ===== -->
+<div class="topbar">
+  <div class="marquee">
+    <span><i>&#10022;</i><b>Brinde especial</b> em todas as compras <i>&#10022;</i> <b>Troca fácil</b> sem burocracia <i>&#10022;</i> Parcele em <b>4x sem juros</b> <i>&#10022;</i> <b>Grupo VIP</b> com vantagens <i>&#10022;</i> <b>Cashback</b> em cada pedido <i>&#10022;</i> <b>Brinde especial</b> em todas as compras <i>&#10022;</i> <b>Troca fácil</b> sem burocracia <i>&#10022;</i> Parcele em <b>4x sem juros</b> <i>&#10022;</i> <b>Grupo VIP</b> com vantagens <i>&#10022;</i> <b>Cashback</b> em cada pedido <i>&#10022;</i> </span>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="wrap header__bar">
+    <div class="header__side">
+      <svg class="ic burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" onclick="alert('Menu mobile — protótipo')"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <div class="searchbox hide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.4-3.4"/></svg>
+        <input type="text" placeholder="O que você procura?">
+      </div>
+    </div>
+    <div class="brand" onclick="go('home')">
+      <img src="https://images.tcdn.com.br/img/img_prod/928620/1614880232_logo_transparente.png" alt="Mania de Mulher" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="brand__fallback" style="display:none">Mania de Mulher</span>
+    </div>
+    <div class="header__side right">
+      <button class="vip-btn" onclick="goVip()" aria-label="Grupo VIP">
+        <span class="wa"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 13.4c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1l-1.5-.6c-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2.1.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c0 .2.1.3 0 .5l-.4.6c-.2.2-.4.4-.2.7.2.4.9 1.4 1.9 2 .7.5 1 .6 1.3.4l.6-.7c.2-.3.4-.2.7-.1l1.8.9c.2.1.4.2.5.3 0 .2 0 .6-.1 1Z"/></svg></span>
+        <span>Grupo VIP</span>
+      </button>
+      <svg class="ic hide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="8" r="4"/></svg>
+      <svg class="ic hide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7-4.6-9.3-9A5 5 0 0 1 12 6.2 5 5 0 0 1 21.3 12c-2.3 4.4-9.3 9-9.3 9Z"/></svg>
+      <span class="cart-dot ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><b>0</b></span>
+    </div>
+  </div>
+  <nav class="wrap nav">
+    <a onclick="go('collection')">Coleções</a>
+    <a onclick="go('collection')">Acessórios de Festa</a>
+    <a onclick="go('collection')">Dia a Dia</a>
+    <a onclick="go('collection')">Kits</a>
+    <a onclick="go('collection')">Clutch</a>
+    <a class="sale" onclick="go('collection')">Ofertas</a>
+  </nav>
+</header>
+
+<!-- ============================ HOME ============================ -->
+<main id="view-home" class="view active">
+
+  <section class="hero">
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <span class="eyebrow">Coleção New York · Lançamento</span>
+        <h1>Brilhe<em>do dia a dia à festa</em></h1>
+        <p>Acessórios, bijuterias e semi joias de alta qualidade. Fabricação própria, banho que dura e o acabamento que valoriza a sua produção.</p>
+        <div class="hero__cta">
+          <button class="btn btn--rose btn--lg" onclick="go('collection')">Ver coleção</button>
+          <button class="btn btn--ghost" style="border-color:#fff;color:#fff" onclick="go('collection')">Mais vendidos</button>
+        </div>
+      </div>
+      <div class="hero__media">
+        <span class="hero__badge">Até 57% OFF</span>
+        <img src="https://images.tcdn.com.br/img/img_prod/928620/kit_4_acessrios_turim_esmeralda_dourado_anel_aju_1_20260406143854_daf9f82af309.jpeg" alt="Coleção New York">
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div class="wrap benefits__grid">
+      <div class="benefit">
+        <svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7C12 7 10.5 3 8 4.2 6 5.2 9 7 12 7ZM12 7c0 0 1.5-4 4-2.8C18 5.2 15 7 12 7Z"/></svg>
+        <div><b>Brinde especial</b><small>Em todas as compras</small></div>
+      </div>
+      <div class="benefit">
+        <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></svg>
+        <div><b>Troca fácil</b><small>Sem burocracia</small></div>
+      </div>
+      <div class="benefit">
+        <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        <div><b>4x sem juros</b><small>No cartão de crédito</small></div>
+      </div>
+      <div class="benefit">
+        <svg viewBox="0 0 24 24"><path d="M12 2 L15.09 8.26 L22 9.27 L17 14.14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14.14 L2 9.27 L8.91 8.26 Z"/></svg>
+        <div><b>Grupo VIP</b><small>Cashback & novidades</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1ª DOBRA: Hero > Benefícios > CARROSSEL > Banner -->
+  <section class="section" style="padding-bottom:42px">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Favoritos das clientes</span>
+        <h2>Mais vendidos</h2>
+        <p>As peças que não param de sair — escolhidas por quem ama brilhar.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="pcar" id="bestCar"></div>
+    </div>
+  </section>
+
+  <!-- Banner principal -->
+  <section class="section banners" style="padding-top:0;padding-bottom:0">
+    <div class="wrap">
+      <a class="banner-hero" onclick="go('collection')">
+        <img src="https://images.tcdn.com.br/img/img_prod/928620/6a15dd70b404f_colecaoNewYork.jpg" alt="Coleção New York">
+        <div class="banner-hero__c">
+          <span class="eyebrow">Coleção exclusiva</span>
+          <h2>New York</h2>
+          <p>O brilho que define a sua noite — peças statement em zircônia e banho dourado.</p>
+          <span class="banner-btn">Eu quero &#8594;</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Banner > Carrossel: Lançamentos -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Acabou de chegar</span>
+        <h2>Lançamentos</h2>
+        <p>As novidades que vão direto pra sua produção.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="pcar" id="lancCar"></div>
+    </div>
+  </section>
+
+  <!-- Banner secundário (3 promoções) -->
+  <section class="section banners" style="padding-top:0;padding-bottom:0">
+    <div class="wrap">
+      <div class="banner-row">
+        <a class="banner-item" onclick="go('collection')">
+          <img src="https://images.tcdn.com.br/img/img_prod/928620/kit_4_acessrios_turim_esmeralda_dourado_anel_aju_1_20260406143854_daf9f82af309.jpeg" alt="Ofertas">
+          <div class="banner-item__c"><span class="eyebrow">Ofertas da semana</span><h3>Até 57% OFF</h3><span class="banner-btn">Comprar</span></div>
+        </a>
+        <a class="banner-item" onclick="go('collection')">
+          <img src="https://images.tcdn.com.br/img/img_prod/928620/kit_colar_e_brinco_de_zircnia_corao_esmeralda_arie_1_20260215164451_5cc005afde3d.jpg" alt="Kits">
+          <div class="banner-item__c"><span class="eyebrow">Conjuntos completos</span><h3>Kits a partir de R$ 74,90</h3><span class="banner-btn">Comprar</span></div>
+        </a>
+        <a class="banner-item" onclick="go('collection')">
+          <img src="https://images.tcdn.com.br/img/img_prod/928620/kit_brinco_anel_regulavel_e_bracelete_lunna_de_zir_1_20260121092346_e251bcb27288.jpeg" alt="Grupo VIP">
+          <div class="banner-item__c"><span class="eyebrow">Brinde + cashback</span><h3>Grupo VIP</h3><span class="banner-btn">Participar</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner > Carrossel: Acessórios de Festa -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Para arrasar</span>
+        <h2>Acessórios de festa</h2>
+        <p>Kits e peças statement para os seus momentos mais especiais.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="pcar" id="festaCar"></div>
+      <div style="text-align:center;margin-top:44px">
+        <button class="btn btn--ghost btn--lg" onclick="go('collection')">Ver todos os produtos</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coleções -->
+  <section class="section" style="background:#fff;border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Nossas linhas</span>
+        <h2>Coleções em destaque</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="collections" id="collectionsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Categorias -->
+  <section class="section" style="background:#fff;border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Encontre o seu estilo</span>
+        <h2>Navegue por categorias</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="cats" id="catGrid"></div>
+    </div>
+  </section>
+
+  <section class="editorial">
+    <div class="editorial__grid">
+      <div class="editorial__img">
+        <img src="https://images.tcdn.com.br/img/img_prod/928620/kit_brinco_anel_regulavel_e_bracelete_lunna_de_zir_1_20260121092346_e251bcb27288.jpeg" alt="Mania de Mulher">
+      </div>
+      <div class="editorial__c">
+        <span class="eyebrow">Quem somos</span>
+        <h2>Acessórios feitos<br>para te valorizar</h2>
+        <p>Há anos a Mania de Mulher cria acessórios de fabricação própria em Belo Horizonte. Banhos de qualidade, zircônias selecionadas e um acabamento que transforma qualquer look — da madrinha de casamento ao café da tarde.</p>
+        <div class="editorial__stats">
+          <div><b>+50mil</b><small>Clientes felizes</small></div>
+          <div><b>4,9★</b><small>Avaliação média</small></div>
+          <div><b>100%</b><small>Fabricação própria</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="videos">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Em movimento</span>
+        <h2>Veja de pertinho</h2>
+        <p>Reels e bastidores — o brilho real das nossas peças.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="video-grid">
+        <div class="video-item" onclick="alert('Vídeo — protótipo')">
+          <span class="video-tag"><i></i>Reels</span>
+          <img src="https://images.tcdn.com.br/img/img_prod/928620/kit_4_acessrios_turim_esmeralda_dourado_anel_aju_1_20260406143854_daf9f82af309.jpeg" alt="Kit Turim em movimento">
+          <div class="video-play-glow"></div><div class="video-play"></div>
+          <div class="video-cap"><b><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@maniademulher</b><small>Kit Turim Esmeralda no look</small></div>
+        </div>
+        <div class="video-item" onclick="alert('Vídeo — protótipo')">
+          <span class="video-tag"><i></i>Reels</span>
+          <img src="https://images.tcdn.com.br/img/img_prod/928620/kit_colar_e_brinco_de_zircnia_corao_esmeralda_arie_1_20260215164451_5cc005afde3d.jpg" alt="Brilho de perto">
+          <div class="video-play-glow"></div><div class="video-play"></div>
+          <div class="video-cap"><b><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@maniademulher</b><small>Brilho de pertinho &#10024;</small></div>
+        </div>
+        <div class="video-item" onclick="alert('Vídeo — protótipo')">
+          <span class="video-tag"><i></i>Reels</span>
+          <img src="https://images.tcdn.com.br/img/img_prod/928620/colar_de_navete_esmeralda_5586_1_04e23b4cca7d5f91bb0ce953f92c366b.jpeg" alt="Unboxing">
+          <div class="video-play-glow"></div><div class="video-play"></div>
+          <div class="video-cap"><b><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@maniademulher</b><small>Unboxing Mania de Mulher</small></div>
+        </div>
+        <div class="video-item" onclick="alert('Vídeo — protótipo')">
+          <span class="video-tag"><i></i>Reels</span>
+          <img src="https://images.tcdn.com.br/img/img_prod/928620/kit_colar_brinco_miriam_de_zircnia_9_20260511160754_33b89a77ec8a.jpeg" alt="Looks de madrinha">
+          <div class="video-play-glow"></div><div class="video-play"></div>
+          <div class="video-cap"><b><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@maniademulher</b><small>Looks de madrinha</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lookbook">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Inspire-se</span>
+        <h2>Mania de Mulher por aí</h2>
+        <p>Marque <b style="color:var(--rose)">@maniademulher</b> e apareça na nossa galeria.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="lb-grid" id="lbGrid"></div>
+    </div>
+  </section>
+
+  <section class="section testi">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Quem usa, ama</span>
+        <h2>Depoimentos de clientes</h2>
+        <p>Mais de 50 mil mulheres já brilharam com a Mania de Mulher.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="testi__viewport"><div class="testi__track" id="testiTrack"></div></div>
+      <div class="testi__nav">
+        <button class="testi__arrow" onclick="testiMove(-1)" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></button>
+        <div class="testi__dots" id="testiDots"></div>
+        <button class="testi__arrow" onclick="testiMove(1)" aria-label="Próximo"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="vip section">
+    <div class="wrap">
+      <span class="eyebrow">Grupo VIP Mania de Mulher</span>
+      <h2>Entre para a lista e ganhe</h2>
+      <p>Cupons exclusivos, pré-venda de lançamentos e cashback. Cadastre seu e-mail e receba seu primeiro mimo.</p>
+      <form class="vip__form" onsubmit="event.preventDefault();this.reset();alert('Cadastro realizado — protótipo')">
+        <input type="email" placeholder="Seu melhor e-mail" required>
+        <button class="btn btn--rose" type="submit">Quero entrar</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ========================= COLLECTION ========================= -->
+<main id="view-collection" class="view">
+  <section class="col-hero">
+    <div class="wrap">
+      <span class="eyebrow">Acessórios de Festa</span>
+      <h1>Coleção Essence</h1>
+      <p>Kits, colares, brincos e braceletes em zircônia e banho dourado. Brilho de joia para os seus momentos especiais.</p>
+    </div>
+  </section>
+  <div class="wrap crumb"><a onclick="go('home')">Home</a> / <a onclick="go('collection')">Coleções</a> / <span>Coleção Essence</span></div>
+  <div class="wrap col-layout">
+    <aside class="filters">
+      <div class="filter-block">
+        <h4>Categoria</h4>
+        <label><input type="checkbox" checked> Kits 3 peças</label>
+        <label><input type="checkbox"> Colares</label>
+        <label><input type="checkbox"> Brincos</label>
+        <label><input type="checkbox"> Anel com brinco</label>
+        <label><input type="checkbox"> Braceletes</label>
+        <label><input type="checkbox"> Clutch</label>
+      </div>
+      <div class="filter-block">
+        <h4>Cor da pedra</h4>
+        <div class="swatches">
+          <span class="swatch" style="background:#1f7a55" title="Esmeralda"></span>
+          <span class="swatch" style="background:#2a4a8c" title="Azul"></span>
+          <span class="swatch" style="background:#c64b78" title="Pink"></span>
+          <span class="swatch" style="background:#e9e9ef" title="Cristal"></span>
+          <span class="swatch" style="background:#7a4ca0" title="Roxo"></span>
+          <span class="swatch" style="background:#d9c08a" title="Nude"></span>
+        </div>
+      </div>
+      <div class="filter-block">
+        <h4>Banho</h4>
+        <label><input type="checkbox" checked> Dourado</label>
+        <label><input type="checkbox"> Prata</label>
+      </div>
+      <div class="filter-block" style="border-bottom:none">
+        <h4>Preço</h4>
+        <label><input type="checkbox"> Até R$ 60</label>
+        <label><input type="checkbox"> R$ 60 – R$ 150</label>
+        <label><input type="checkbox"> R$ 150 – R$ 300</label>
+        <label><input type="checkbox"> Acima de R$ 300</label>
+      </div>
+    </aside>
+    <div>
+      <div class="col-toolbar">
+        <small id="colCount"></small>
+        <select>
+          <option>Ordenar · Mais vendidos</option>
+          <option>Menor preço</option>
+          <option>Maior preço</option>
+          <option>Lançamentos</option>
+        </select>
+      </div>
+      <div class="products" id="colGrid"></div>
+    </div>
+  </div>
+</main>
+
+<!-- ========================== PRODUCT =========================== -->
+<main id="view-product" class="view">
+  <div class="wrap crumb"><a onclick="go('home')">Home</a> / <a onclick="go('collection')">Coleção Essence</a> / <span id="pdpCrumb"></span></div>
+
+  <div class="wrap pdp">
+    <div class="pdp__gallery">
+      <div class="pdp__thumbs" id="pdpThumbs"></div>
+      <div class="pdp__main">
+        <div class="badges" id="pdpBadges"></div>
+        <img id="pdpImg" src="" alt="">
+      </div>
+    </div>
+
+    <div class="pdp__info">
+      <div class="pills">
+        <span class="pill"><svg viewBox="0 0 24 24"><path d="m12 3 2.2 4.5 4.8.7-3.5 3.4.8 4.8L12 19l-4.3 2.4.8-4.8L5 13.2l4.8-.7L12 3Z"/></svg>Zircônias premium</span>
+        <span class="pill"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.4-3 7-7 8-4-1-7-3.6-7-8V6l7-3Z"/></svg>Banho que dura</span>
+        <span class="pill"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Antialérgico</span>
+      </div>
+      <span class="eyebrow" id="pdpCat">Kit 3 Peças</span>
+      <h1 id="pdpName"></h1>
+      <div class="rating"><span class="s">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span>4,9 · 128 avaliações</span></div>
+
+      <div class="pdp__pricebox">
+        <div class="pdp__price">
+          <span class="old" id="pdpOld"></span>
+          <span class="now" id="pdpNow"></span>
+          <span class="off" id="pdpOff"></span>
+        </div>
+        <div class="pdp__pay" id="pdpPay"></div>
+        <div class="pdp__pix" id="pdpPix"><svg viewBox="0 0 24 24"><path d="m12 2 10 10-10 10L2 12 12 2Z"/></svg><span id="pdpPixTxt"></span></div>
+      </div>
+
+      <div class="pdp__opt">
+        <p>Cor da pedra: <b id="pdpOptVal">Esmeralda</b></p>
+        <div class="opt-row" id="pdpOpts">
+          <div class="opt active" onclick="setOpt(this,'Esmeralda')"><i style="background:#1f7a55"></i>Esmeralda</div>
+          <div class="opt" onclick="setOpt(this,'Azul')"><i style="background:#2a4a8c"></i>Azul</div>
+          <div class="opt" onclick="setOpt(this,'Pink')"><i style="background:#c64b78"></i>Pink</div>
+        </div>
+      </div>
+
+      <div class="qty-cart">
+        <div class="qty"><button onclick="qty(-1)">&#8722;</button><span id="qtyVal">1</span><button onclick="qty(1)">&#43;</button></div>
+        <button class="btn btn--rose">Adicionar ao carrinho</button>
+      </div>
+      <button class="btn btn--block pdp__buynow">Comprar agora</button>
+
+      <div class="pdp__ship">
+        <svg viewBox="0 0 24 24"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7"/><circle cx="7.5" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg>
+        <small><b>Calcule o frete e o prazo.</b> Enviamos para todo o Brasil · disponível em até 3 dias úteis.</small>
+      </div>
+
+      <div class="pdp__trust">
+        <div><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3Z"/><path d="m9 12 2 2 4-4"/></svg> Compra 100% segura</div>
+        <div><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"/></svg> Troca fácil em 7 dias</div>
+        <div><svg viewBox="0 0 24 24"><path d="M12 2 L15.09 8.26 L22 9.27 L17 14.14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14.14 L2 9.27 L8.91 8.26 Z"/></svg> Brinde + cashback VIP</div>
+        <div><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg> Fabricação própria</div>
+      </div>
+    </div>
+
+    <!-- ACCORDION -->
+    <div class="acc" id="pdpAcc">
+      <div class="acc__item open">
+        <div class="acc__head" onclick="toggleAcc(this)">Descrição <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="acc__body"><div class="acc__body-in" id="pdpDesc"></div></div>
+      </div>
+      <div class="acc__item">
+        <div class="acc__head" onclick="toggleAcc(this)">Ficha técnica <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="acc__body"><div class="acc__body-in">
+          <table><tbody>
+            <tr><td>Material</td><td>Liga metálica com banho · zircônias</td></tr>
+            <tr><td>Banho</td><td>Dourado / Prata (conforme variação)</td></tr>
+            <tr><td>Marca</td><td>Mania de Mulher</td></tr>
+            <tr><td>Fabricação</td><td>Própria · Belo Horizonte/MG</td></tr>
+          </tbody></table>
+        </div></div>
+      </div>
+      <div class="acc__item">
+        <div class="acc__head" onclick="toggleAcc(this)">Trocas & devoluções <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="acc__body"><div class="acc__body-in">Você tem até 7 dias após o recebimento para solicitar troca ou devolução, sem burocracia. O produto deve estar sem sinais de uso e na embalagem original. Fale com a gente pelo WhatsApp para iniciar.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMAGE GALLERY -->
+  <section class="section" style="padding-top:48px">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Galeria</span><h2>Veja em detalhes</h2><div class="divider"></div></div>
+      <div class="pgal" id="pdpGallery"></div>
+    </div>
+  </section>
+
+  <!-- BENEFIT BLOCKS -->
+  <section class="benefit-blocks">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Por que amar</span><h2>Feito para durar e brilhar</h2><div class="divider"></div></div>
+      <div class="bb-grid">
+        <div class="bb">
+          <div class="bb__ic"><svg viewBox="0 0 24 24"><path d="M12 2 L15.09 8.26 L22 9.27 L17 14.14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14.14 L2 9.27 L8.91 8.26 Z"/></svg></div>
+          <h3>Zircônias selecionadas</h3>
+          <p>Brilho intenso e refinado, com efeito de joia de verdade que se destaca em qualquer produção.</p>
+        </div>
+        <div class="bb">
+          <div class="bb__ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.4-3 7-7 8-4-1-7-3.6-7-8V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Banho que dura</h3>
+          <p>Banho dourado e prata de alta qualidade, feito para resistir ao uso do dia a dia sem escurecer.</p>
+        </div>
+        <div class="bb">
+          <div class="bb__ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></div>
+          <h3>Antialérgico</h3>
+          <p>Peças pensadas para o conforto da sua pele, ideais para usar o dia inteiro sem irritação.</p>
+        </div>
+        <div class="bb">
+          <div class="bb__ic"><svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12h-6v-7H9v7H3Z"/></svg></div>
+          <h3>Fabricação própria</h3>
+          <p>Produzido em Belo Horizonte com controle de qualidade em cada etapa — do design ao acabamento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <div class="wrap">
+      <h2>A peça certa não completa o look.<em>Ela completa você.</em></h2>
+      <div class="statement__stats">
+        <div><b>+50mil</b><small>Clientes felizes</small></div>
+        <div><b>4,9/5</b><small>Nota média</small></div>
+        <div><b>97%</b><small>Recomendam</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Cuidado simples</span><h2>Como cuidar da sua peça</h2><div class="divider"></div></div>
+      <div class="steps-grid">
+        <div class="step"><div class="step__n">1</div><h3>Evite contato com líquidos</h3><p>Tire ao tomar banho, dormir ou se perfumar. Coloque o acessório sempre por último.</p></div>
+        <div class="step"><div class="step__n">2</div><h3>Guarde protegido</h3><p>Mantenha em local seco, na embalagem ou em um saquinho individual para preservar o brilho.</p></div>
+        <div class="step"><div class="step__n">3</div><h3>Limpe com pano seco</h3><p>Após o uso, passe um paninho macio. Assim o banho dura muito mais tempo bonito.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (reused on PDP too) -->
+  <section class="section testi" style="background:var(--blush-tint)">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Quem usa, ama</span><h2>O que dizem sobre nós</h2><div class="divider"></div></div>
+      <div class="testi__viewport"><div class="testi__track" id="testiTrack2"></div></div>
+      <div class="testi__nav">
+        <button class="testi__arrow" onclick="testiMove2(-1)" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></button>
+        <div class="testi__dots" id="testiDots2"></div>
+        <button class="testi__arrow" onclick="testiMove2(1)" aria-label="Próximo"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Tire suas dúvidas</span><h2>Perguntas frequentes</h2><div class="divider"></div></div>
+      <div class="acc faq" id="faq">
+        <div class="acc__item"><div class="acc__head" onclick="toggleAcc(this)">O banho escurece com o tempo? <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div><div class="acc__body"><div class="acc__body-in">Com os cuidados certos (evitar água, perfume e suor em excesso) o banho dura bastante. Por isso recomendamos colocar o acessório sempre por último.</div></div></div>
+        <div class="acc__item"><div class="acc__head" onclick="toggleAcc(this)">Vocês entregam em todo o Brasil? <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div><div class="acc__body"><div class="acc__body-in">Sim! Enviamos para todo o país. O valor e o prazo do frete são calculados pelo seu CEP no carrinho.</div></div></div>
+        <div class="acc__item"><div class="acc__head" onclick="toggleAcc(this)">Posso parcelar? <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div><div class="acc__body"><div class="acc__body-in">Sim, em até 4x sem juros no cartão de crédito (e mais parcelas com juros). No Pix você ainda ganha desconto à vista.</div></div></div>
+        <div class="acc__item"><div class="acc__head" onclick="toggleAcc(this)">E se eu não gostar? <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div><div class="acc__body"><div class="acc__body-in">Você tem 7 dias para trocar ou devolver, sem burocracia. É só falar com a gente pelo WhatsApp.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS SELL -->
+  <section class="related">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Você também vai amar</span><h2>Combina com</h2><div class="divider"></div></div>
+      <div class="pcar" id="relCar"></div>
+    </div>
+  </section>
+</main>
+
+<!-- STICKY ADD BAR -->
+<div class="stickybar" id="stickybar">
+  <div class="stickybar__in">
+    <img id="sbImg" src="" alt="">
+    <div>
+      <div class="nm" id="sbName"></div>
+      <div class="pr" id="sbPrice"></div>
+    </div>
+    <button class="btn btn--rose" onclick="window.scrollTo({top:0,behavior:'smooth'})">Adicionar ao carrinho</button>
+  </div>
+</div>
+
+<!-- ============================ FOOTER ========================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="https://images.tcdn.com.br/img/img_prod/928620/1614880232_logo_transparente.png" alt="Mania de Mulher" onerror="this.style.display='none'">
+        <p>Luxo e elegância em acessórios, bijuterias e semi joias de alta qualidade. Fabricação própria em Belo Horizonte/MG.</p>
+        <div class="socials">
+          <a href="#" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h2.7l.4-3H13V9c0-.9.3-1.5 1.6-1.5h1.6V4.9c-.3 0-1.4-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.8v3H10.5v8H13Z"/></svg></a>
+          <a href="#" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.1 1.5 3.6 3.5 3.8v2.7c-1.2 0-2.4-.4-3.5-1.1v5.8c0 3.2-2.4 5.5-5.3 5.5a5.2 5.2 0 0 1 0-10.4c.3 0 .6 0 .9.1v2.8c-.3-.1-.6-.2-.9-.2a2.5 2.5 0 1 0 2.5 2.5V3h2.8Z"/></svg></a>
+          <a href="#" title="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 13.4c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1l-1.5-.6c-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2.1.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c0 .2.1.3 0 .5l-.4.6c-.2.2-.4.4-.2.7.2.4.9 1.4 1.9 2 .7.5 1 .6 1.3.4l.6-.7c.2-.3.4-.2.7-.1l1.8.9c.2.1.4.2.5.3 0 .2 0 .6-.1 1Z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="#">Quem somos</a></li>
+          <li><a href="#">Como comprar</a></li>
+          <li><a href="#">Trocas & devoluções</a></li>
+          <li><a href="#">Pagamento</a></li>
+          <li><a href="#">Frete</a></li>
+          <li><a href="#">Depoimentos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Vantagens</h4>
+        <ul>
+          <li><a href="#">Grupo VIP</a></li>
+          <li><a href="#">Cashback / Giftback</a></li>
+          <li><a href="#">Cupons de desconto</a></li>
+          <li><a href="#">Compre 1, ganhe 1</a></li>
+          <li><a href="#">Central do cliente</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <h4>Atendimento</h4>
+        <p><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> (31) 97333-6363</p>
+        <p><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> compras@maniadmulher.com</p>
+        <p><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Seg a Sex · 9h às 17h</p>
+        <p><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg> Rua Gávea, 337 · Belo Horizonte/MG</p>
+      </div>
+    </div>
+    <div class="footer__pay">
+      <small style="color:var(--taupe);font-family:var(--sans);font-size:12px;letter-spacing:.04em">Pague com segurança</small>
+      <div class="tags"><span>Pix</span><span>Visa</span><span>Master</span><span>Elo</span><span>Amex</span><span>Diners</span><span>Mercado Pago</span><span>Boleto</span></div>
+      <span style="font-size:11px;color:var(--green);font-weight:600;font-family:var(--sans)">&#128274; Loja Protegida</span>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    © 2026 Mania de Mulher Ltda EPP · CNPJ 00.000.000/0001-00 · <em>Protótipo de aprovação</em>
+  </div>
+</footer>
+
+<script>
+/* ===================== DATA ===================== */
+const IMG='https://images.tcdn.com.br/img/img_prod/928620/';
+const PRODUCTS=[
+  {id:'lunna',cat:'Kit 3 Peças',name:'Kit Lunna · Brinco, Anel e Bracelete',img:IMG+'kit_brinco_anel_regulavel_e_bracelete_lunna_de_zir_1_20260121092346_e251bcb27288.jpeg',old:240,now:199.90,inst:'12x de R$ 20,64',pix:189.91,badge:'17% OFF',btype:'off',desc:'O Kit Lunna em zircônia nude dourado é sofisticado, delicado e extremamente versátil — brinco, anel regulável e bracelete que combinam com qualquer look. Banho dourado que ilumina a produção.'},
+  {id:'turim4',cat:'Kit 4 Peças',name:'Kit Turim Esmeralda · 4 Acessórios',img:IMG+'kit_4_acessrios_turim_esmeralda_dourado_anel_aju_1_20260406143854_daf9f82af309.jpeg',old:487,now:399,inst:'12x de R$ 41,19',pix:379.05,badge:'18% OFF',btype:'off',new:true,desc:'Anel ajustável, colar, pulseira e brinco em verde esmeralda com banho dourado. Um conjunto luxuoso, moderno e extremamente feminino, perfeito para festa, madrinha, casamento e formatura.'},
+  {id:'miriam',cat:'Acessórios de Festa',name:'Kit Miriam · Colar e Brinco de Zircônia',img:IMG+'kit_colar_brinco_miriam_de_zircnia_9_20260511160754_33b89a77ec8a.jpeg',old:159,now:129,inst:'12x de R$ 13,32',pix:122.55,badge:'19% OFF',btype:'off',desc:'Cada peça é banhada com qualidade excepcional, garantindo durabilidade e brilho duradouros. Arrase nas festas e use cada item separadamente no seu dia a dia.'},
+  {id:'ariel',cat:'Coleção Essence',name:'Kit Ariel · Coração Esmeralda',img:IMG+'kit_colar_e_brinco_de_zircnia_corao_esmeralda_arie_1_20260215164451_5cc005afde3d.jpg',old:null,now:74.90,inst:'8x de R$ 10,85',pix:71.16,badge:'Lançamento',btype:'new',new:true,desc:'O coração em tom esmeralda traz presença chique, enquanto a zircônia entrega um brilho intenso e refinado, com efeito de joia de verdade. Colar de 40cm + 5cm de extensão.'},
+  {id:'turim2',cat:'Anel com Brinco',name:'Kit Turim · Anel Regulável e Brinco',img:IMG+'kit_anel_regulvel_com_brinco_turim_verde_esmeralda_1_20260406172512_95996636c687.jpeg',old:null,now:169,inst:'12x de R$ 17,45',pix:160.55,badge:'Lançamento',btype:'new',new:true,desc:'Anel regulável e brinco com a intensidade do verde esmeralda combinada ao dourado. Um look sofisticado que valoriza qualquer produção.'},
+  {id:'navete',cat:'Colar de Festa',name:'Colar de Navete de Pedraria',img:IMG+'colar_de_navete_esmeralda_5586_1_04e23b4cca7d5f91bb0ce953f92c366b.jpeg',old:null,now:78.99,inst:'9x de R$ 10,35',pix:75.04,badge:'Destaque',btype:'',desc:'Mais do que um acessório: uma peça banhada com qualidade excepcional. Colar de 40cm + 10cm de extensão, disponível em três cores de pedra.'},
+  {id:'clutch',cat:'Clutch',name:'Clutch de X Nude Dourada',img:IMG+'90_clutch_de_x_dourada_1_20260206105705_a1c3f071babf.jpeg',old:null,now:189.90,inst:'12x de R$ 19,60',pix:180.40,badge:'Destaque',btype:'',desc:'A clutch perfeita para completar a sua produção de festa. Estrutura elegante em tom nude dourado que combina com qualquer vestido.'},
+  {id:'lunna2',cat:'Kit 3 Peças',name:'Kit Lunna · Edição Dourada',img:IMG+'kit_brinco_anel_regulavel_e_bracelete_lunna_de_zir_1_20260121092346_e251bcb27288.jpeg',old:240,now:199.90,inst:'12x de R$ 20,64',pix:189.91,badge:'17% OFF',btype:'off',desc:'O charme da linha Lunna em um conjunto harmonioso de brinco, anel regulável e bracelete com brilho elegante da zircônia nude.'}
+];
+const COLLECTIONS=[
+  {name:'New York',sub:'Lançamento',img:IMG+'6a15dd70b404f_colecaoNewYork.jpg'},
+  {name:'Essence',sub:'Best-seller',img:IMG+'kit_colar_e_brinco_de_zircnia_corao_esmeralda_arie_1_20260215164451_5cc005afde3d.jpg'},
+  {name:'Versalys',sub:'Sofisticada',img:IMG+'kit_4_acessrios_turim_esmeralda_dourado_anel_aju_1_20260406143854_daf9f82af309.jpeg'},
+  {name:'Mar',sub:'Atemporal',img:IMG+'colar_de_navete_esmeralda_5586_1_04e23b4cca7d5f91bb0ce953f92c366b.jpeg'}
+];
+const CATS=[
+  {n:'Kits',s:'3 a 4 peças',img:IMG+'kit_4_acessrios_turim_esmeralda_dourado_anel_aju_1_20260406143854_daf9f82af309.jpeg'},
+  {n:'Colares',s:'Festa & dia a dia',img:IMG+'colar_de_navete_esmeralda_5586_1_04e23b4cca7d5f91bb0ce953f92c366b.jpeg'},
+  {n:'Brincos',s:'Zircônia & pedraria',img:IMG+'kit_colar_e_brinco_de_zircnia_corao_esmeralda_arie_1_20260215164451_5cc005afde3d.jpg'},
+  {n:'Anéis',s:'Reguláveis',img:IMG+'kit_anel_regulvel_com_brinco_turim_verde_esmeralda_1_20260406172512_95996636c687.jpeg'},
+  {n:'Clutches',s:'Para arrasar',img:IMG+'90_clutch_de_x_dourada_1_20260206105705_a1c3f071babf.jpeg'},
+  {n:'Braceletes',s:'Brilho no pulso',img:IMG+'kit_brinco_anel_regulavel_e_bracelete_lunna_de_zir_1_20260121092346_e251bcb27288.jpeg'}
+];
+const TESTI=[
+  {q:'Comprei o Kit Turim pra ser madrinha e recebi elogios a noite toda. O brilho parece joia de verdade!',n:'Juliana Martins',c:'Belo Horizonte/MG',a:'J'},
+  {q:'Acessórios lindos e bem embalados. Veio com brindinho e o atendimento no WhatsApp foi super rápido.',n:'Patrícia Souza',c:'São Paulo/SP',a:'P'},
+  {q:'Já é minha terceira compra. A qualidade do banho dourado é outro nível, não escurece com o uso.',n:'Carolina Ribeiro',c:'Rio de Janeiro/RJ',a:'C'},
+  {q:'O colar de navete esmeralda é simplesmente perfeito. Uso no trabalho e nas festas, combina com tudo.',n:'Fernanda Lima',c:'Curitiba/PR',a:'F'},
+  {q:'Entrei no Grupo VIP e amei os cupons. O kit Lunna chegou antes do prazo e impecável.',n:'Amanda Costa',c:'Contagem/MG',a:'A'},
+  {q:'Brincos delicados e elegantes, exatamente como nas fotos. Virei cliente fiel da Mania de Mulher.',n:'Beatriz Almeida',c:'Uberlândia/MG',a:'B'}
+];
+
+/* ===================== RENDER ===================== */
+const brl=n=>n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const STAR='&#9733;&#9733;&#9733;&#9733;&#9733;';
+
+function cardHTML(p){
+  const badge=p.badge?`<span class="tag ${p.btype==='off'?'tag--off':p.btype==='new'?'tag--new':''}">${p.badge}</span>`:'';
+  const newTag=(p.new&&p.btype!=='new')?`<span class="tag tag--new">Lançamento</span>`:'';
+  const old=p.old?`<span class="price__old">R$ ${brl(p.old)}</span>`:'';
+  return `<article class="card" onclick="openProduct('${p.id}')">
+    <div class="card__media">
+      <div class="card__badges">${badge}${newTag}</div>
+      <div class="card__fav"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5 5 0 0 1 12 6.2 5 5 0 0 1 21.3 12c-2.3 4.4-9.3 9-9.3 9Z"/></svg></div>
+      <img src="${p.img}" alt="${p.name}" loading="lazy">
+    </div>
+    <div class="card__info">
+      <div class="card__cat">${p.cat}</div>
+      <h3 class="card__name">${p.name}</h3>
+      <div class="price">${old}<span class="price__now">R$ ${brl(p.now)}</span></div>
+      <div class="price__install">ou <b>${p.inst}</b></div>
+      <button class="card__btn" onclick="event.stopPropagation();openProduct('${p.id}')">
+        <svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/><path d="M2.5 4h2l2.1 11a1.3 1.3 0 0 0 1.3 1h8.4a1.3 1.3 0 0 0 1.3-1L20 7.5H6"/></svg>Comprar
+      </button>
+    </div>
+  </article>`;
+}
+function buildProductCarousel(containerId,list){
+  const c=document.getElementById(containerId);
+  if(!c)return;
+  c.innerHTML=`
+    <button class="pcar__arrow pcar__prev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></button>
+    <div class="pcar__viewport"><div class="pcar__track">${list.map(p=>`<div class="pcar__item">${cardHTML(p)}</div>`).join('')}</div></div>
+    <button class="pcar__arrow pcar__next" aria-label="Próximo"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
+    <div class="pcar__dots"></div>`;
+  const track=c.querySelector('.pcar__track'),dots=c.querySelector('.pcar__dots');
+  const prev=c.querySelector('.pcar__prev'),next=c.querySelector('.pcar__next');
+  let index=0;
+  const perView=()=>{const w=window.innerWidth;return w<=560?1:w<=860?2:w<=1080?3:4;};
+  const maxIndex=()=>Math.max(0,list.length-perView());
+  function render(){
+    if(index>maxIndex())index=maxIndex();
+    if(index<0)index=0;
+    const item=track.querySelector('.pcar__item');
+    const gap=perView()===1?0:24;
+    const step=item.getBoundingClientRect().width+gap;
+    track.style.transform=`translateX(${-index*step}px)`;
+    const pages=maxIndex()+1;
+    dots.innerHTML=Array.from({length:pages},(_,i)=>`<button class="${i===index?'active':''}" data-i="${i}" aria-label="Página ${i+1}"></button>`).join('');
+    dots.querySelectorAll('button').forEach(b=>b.onclick=()=>{index=+b.dataset.i;render();});
+    prev.classList.toggle('disabled',index<=0);
+    next.classList.toggle('disabled',index>=maxIndex());
+  }
+  prev.onclick=()=>{index--;render();};
+  next.onclick=()=>{index++;render();};
+  c._render=render;
+  render();
+}
+buildProductCarousel('bestCar',PRODUCTS.slice(0,8));
+buildProductCarousel('lancCar',[...PRODUCTS.filter(p=>p.new),...PRODUCTS.filter(p=>!p.new)].slice(0,6));
+buildProductCarousel('festaCar',['miriam','navete','ariel','clutch','lunna','turim4','turim2'].map(id=>PRODUCTS.find(p=>p.id===id)));
+window.addEventListener('resize',()=>document.querySelectorAll('.pcar').forEach(el=>el._render&&el._render()));
+document.getElementById('colGrid').innerHTML=PRODUCTS.map(cardHTML).join('');
+document.getElementById('colCount').textContent=PRODUCTS.length+' produtos';
+document.getElementById('collectionsGrid').innerHTML=COLLECTIONS.map(c=>`
+  <div class="collection" onclick="go('collection')">
+    <img src="${c.img}" alt="${c.name}" loading="lazy">
+    <div class="collection__c"><small>${c.sub}</small><h3>${c.name}</h3><span>Ver coleção</span></div>
+  </div>`).join('');
+document.getElementById('catGrid').innerHTML=CATS.map(c=>`
+  <div class="cat" onclick="go('collection')">
+    <img src="${c.img}" alt="${c.n}" loading="lazy">
+    <div class="cat__overlay"><b>${c.n}</b><i>${c.s}</i></div>
+  </div>`).join('');
+
+/* ===================== LOOKBOOK ===================== */
+const LB=[
+  IMG+'kit_4_acessrios_turim_esmeralda_dourado_anel_aju_1_20260406143854_daf9f82af309.jpeg',
+  IMG+'colar_de_navete_esmeralda_5586_1_04e23b4cca7d5f91bb0ce953f92c366b.jpeg',
+  IMG+'kit_colar_e_brinco_de_zircnia_corao_esmeralda_arie_1_20260215164451_5cc005afde3d.jpg',
+  IMG+'90_clutch_de_x_dourada_1_20260206105705_a1c3f071babf.jpeg',
+  IMG+'kit_colar_brinco_miriam_de_zircnia_9_20260511160754_33b89a77ec8a.jpeg',
+  IMG+'kit_anel_regulvel_com_brinco_turim_verde_esmeralda_1_20260406172512_95996636c687.jpeg',
+  IMG+'kit_brinco_anel_regulavel_e_bracelete_lunna_de_zir_1_20260121092346_e251bcb27288.jpeg',
+  IMG+'6a15dd70b404f_colecaoNewYork.jpg',
+  IMG+'colar_de_navete_esmeralda_5586_1_04e23b4cca7d5f91bb0ce953f92c366b.jpeg',
+  IMG+'kit_4_acessrios_turim_esmeralda_dourado_anel_aju_1_20260406143854_daf9f82af309.jpeg',
+  IMG+'kit_colar_e_brinco_de_zircnia_corao_esmeralda_arie_1_20260215164451_5cc005afde3d.jpg',
+  IMG+'kit_anel_regulvel_com_brinco_turim_verde_esmeralda_1_20260406172512_95996636c687.jpeg'
+];
+const igIcon='<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>';
+document.getElementById('lbGrid').innerHTML=LB.map(src=>`
+  <div class="lb-item"><img src="${src}" alt="Mania de Mulher" loading="lazy"><span class="ig">${igIcon}@maniademulher</span></div>`).join('');
+
+/* ===================== TESTIMONIALS ===================== */
+const verIcon='<span class="verified"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.2 2.2L15.5 9.5"/></svg>Compra verificada</span>';
+function testiCardHTML(t){return `<div class="testi__item"><div class="testi-card">
+  <div class="testi-stars">${STAR}</div>
+  <p class="quote">&ldquo;${t.q}&rdquo;</p>
+  <div class="testi-author"><span class="av">${t.a}</span><span><b>${t.n}</b><small>${t.c}</small></span>${verIcon}</div>
+</div></div>`;}
+
+function makeCarousel(trackId,dotsId){
+  const track=document.getElementById(trackId);
+  track.innerHTML=TESTI.map(testiCardHTML).join('');
+  let index=0;
+  const perView=()=>window.innerWidth<=560?1:window.innerWidth<=860?2:3;
+  const maxIndex=()=>Math.max(0,TESTI.length-perView());
+  function render(){
+    if(index>maxIndex())index=maxIndex();
+    const item=track.querySelector('.testi__item');
+    const per=perView();
+    const step=item.offsetWidth+(per===1?0:28);
+    track.style.transform=`translateX(${-index*step}px)`;
+    const dots=document.getElementById(dotsId);
+    const pages=maxIndex()+1;
+    dots.innerHTML=Array.from({length:pages},(_,i)=>`<button class="${i===index?'active':''}" data-i="${i}" aria-label="Slide ${i+1}"></button>`).join('');
+    dots.querySelectorAll('button').forEach(b=>b.onclick=()=>{index=+b.dataset.i;render();reset();});
+  }
+  let auto;
+  function move(d){const m=maxIndex()+1;index=(index+d+m)%m;render();reset();}
+  function reset(){clearInterval(auto);auto=setInterval(()=>move(1),5500);}
+  window.addEventListener('resize',render);
+  render();reset();
+  return move;
+}
+const testiMove=makeCarousel('testiTrack','testiDots');
+const testiMove2=makeCarousel('testiTrack2','testiDots2');
+
+/* ===================== NAVIGATION ===================== */
+function go(view){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  const active=document.getElementById('view-'+view);
+  active.classList.add('active');
+  document.getElementById('stickybar').classList.toggle('show',view==='product');
+  window.scrollTo({top:0,behavior:'instant'});
+  // safety: reveal elements already in viewport of the newly shown view
+  requestAnimationFrame(()=>{
+    active.querySelectorAll('.reveal:not(.in)').forEach(el=>{
+      const r=el.getBoundingClientRect();
+      if(r.top<window.innerHeight*0.95)el.classList.add('in');
+    });
+  });
+}
+
+function goVip(){
+  go('home');
+  setTimeout(()=>{const v=document.querySelector('.vip');if(v)v.scrollIntoView({behavior:'smooth',block:'center'});},90);
+}
+
+function openProduct(id){
+  const p=PRODUCTS.find(x=>x.id===id)||PRODUCTS[0];
+  const set=(el,v)=>document.getElementById(el).textContent=v;
+  set('pdpCrumb',p.name);set('pdpCat',p.cat);set('pdpName',p.name);
+  document.getElementById('pdpImg').src=p.img;
+  set('pdpNow','R$ '+brl(p.now));
+  set('pdpOld',p.old?'R$ '+brl(p.old):'');
+  const off=document.getElementById('pdpOff');
+  off.textContent=(p.btype==='off')?p.badge:'';off.style.display=(p.btype==='off')?'':'none';
+  document.getElementById('pdpPay').innerHTML='em até <b>'+p.inst+'</b> ou 4x sem juros';
+  set('pdpPixTxt','R$ '+brl(p.pix)+' à vista no Pix (5% OFF)');
+  document.getElementById('pdpDesc').innerHTML='<p>'+p.desc+'</p><ul><li>Zircônias selecionadas com brilho de joia</li><li>Banho de alta durabilidade</li><li>Fabricação própria · acabamento premium</li><li>Perfeito para festa, madrinha, casamento e formatura</li></ul>';
+  // badges on main
+  let b='';
+  if(p.btype==='off')b+=`<span class="tag tag--off">${p.badge}</span>`;
+  else if(p.badge)b+=`<span class="tag ${p.btype==='new'?'tag--new':''}">${p.badge}</span>`;
+  if(p.new&&p.btype!=='new')b+='<span class="tag tag--new">Lançamento</span>';
+  document.getElementById('pdpBadges').innerHTML=b;
+  // thumbs
+  const others=PRODUCTS.filter(x=>x.id!==id).slice(0,4);
+  const thumbs=[p,...others];
+  document.getElementById('pdpThumbs').innerHTML=thumbs.map((t,i)=>`<img src="${t.img}" class="${i===0?'active':''}" data-src="${t.img}">`).join('');
+  document.querySelectorAll('#pdpThumbs img').forEach(im=>im.onclick=()=>{document.getElementById('pdpImg').src=im.dataset.src;document.querySelectorAll('#pdpThumbs img').forEach(x=>x.classList.remove('active'));im.classList.add('active');});
+  const gal=[p.img,...others.map(o=>o.img)].slice(0,5);
+  document.getElementById('pdpGallery').innerHTML=gal.map(src=>`<div class="pgal-item"><img src="${src}" alt="${p.name}" loading="lazy"></div>`).join('');
+  buildProductCarousel('relCar',others);
+  document.getElementById('qtyVal').textContent='1';
+  // sticky bar
+  document.getElementById('sbImg').src=p.img;
+  set('sbName',p.name);
+  document.getElementById('sbPrice').innerHTML=(p.old?'<s style="color:var(--taupe)">R$ '+brl(p.old)+'</s> ':'')+'<b>R$ '+brl(p.now)+'</b> · '+p.inst;
+  // reset accordion to first open
+  document.querySelectorAll('#pdpAcc .acc__item').forEach((it,i)=>{it.classList.toggle('open',i===0);const bd=it.querySelector('.acc__body');bd.style.maxHeight=i===0?bd.scrollHeight+40+'px':null;});
+  go('product');
+}
+function setOpt(el,name){el.parentNode.querySelectorAll('.opt').forEach(o=>o.classList.remove('active'));el.classList.add('active');document.getElementById('pdpOptVal').textContent=name;}
+function qty(d){const el=document.getElementById('qtyVal');el.textContent=Math.max(1,parseInt(el.textContent)+d);}
+function toggleAcc(head){
+  const item=head.parentNode,body=head.nextElementSibling;
+  const open=item.classList.toggle('open');
+  body.style.maxHeight=open?body.scrollHeight+40+'px':null;
+}
+/* ===================== SCROLL REVEAL ===================== */
+function setupReveal(){
+  const sel='.sec-head, .card, .collection, .cat, .benefit, .bb, .step, .testi__viewport, .lb-item, .editorial__c, .editorial__img, .vip__form, .pdp__pricebox, .acc, .pcar, .banner-hero, .banner-item, .video-item';
+  const items=[...document.querySelectorAll(sel)].filter(el=>!(el.classList.contains('card')&&el.closest('.pcar')));
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const el=e.target;
+        const sibs=[...(el.parentElement?el.parentElement.children:[])].filter(s=>s.classList.contains('reveal'));
+        const idx=Math.max(0,sibs.indexOf(el));
+        el.style.animationDelay=(idx%4*90)+'ms';
+        el.classList.add('in');
+        io.unobserve(el);
+      }
+    });
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  items.forEach(el=>{el.classList.add('reveal');io.observe(el);});
+}
+
+// init first PDP so it's never empty
+openProduct('lunna');go('home');
+setupReveal();
+</script>
+</body>
+</html>
