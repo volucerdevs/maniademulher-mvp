@@ -78,6 +78,18 @@ h1,h2,h3,h4{font-family:var(--text);color:var(--espresso)}
 .view{display:none}
 .view.active{display:block}
 
+/* ===== Hero slider ===== */
+.hero-slider{position:relative;overflow:hidden;background:var(--black)}
+.hero-track{display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.hero-slide{flex:0 0 100%;cursor:pointer}
+.hero-slide picture,.hero-slide img{display:block;width:100%;height:auto}
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border:0;border-radius:50%;background:rgba(255,255,255,.82);color:var(--espresso);font-size:26px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.22);transition:background .3s,transform .3s;z-index:2}
+.hero-arrow:hover{background:#fff;transform:translateY(-50%) scale(1.08)}
+.hero-arrow.prev{left:18px}.hero-arrow.next{right:18px}
+.hero-dots{position:absolute;bottom:18px;left:0;right:0;display:flex;gap:9px;justify-content:center;z-index:2}
+.hero-dots button{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;transition:width .3s,background .3s}
+.hero-dots button.active{width:24px;border-radius:5px;background:#fff}
+@media(max-width:640px){.hero-arrow{width:38px;height:38px;font-size:22px}.hero-arrow.prev{left:10px}.hero-arrow.next{right:10px}}
 /* ===== Hero ===== */
 .hero{position:relative;background:var(--black);color:#fff;overflow:hidden}
 .hero__grid{display:grid;grid-template-columns:1.02fr .98fr;min-height:560px}
@@ -671,22 +683,30 @@ body{background:
 <!-- ============================ HOME ============================ -->
 <main id="view-home" class="view active">
 
-  <section class="hero">
-    <div class="hero__grid">
-      <div class="hero__copy">
-        <span class="eyebrow">Coleção New York · Lançamento</span>
-        <h1>Brilhe<em>do dia a dia à festa</em></h1>
-        <p>Acessórios, bijuterias e semi joias de alta qualidade. Fabricação própria, banho que dura e o acabamento que valoriza a sua produção.</p>
-        <div class="hero__cta">
-          <button class="btn btn--rose btn--lg" onclick="go('collection')">Ver coleção</button>
-          <button class="btn btn--ghost" style="border-color:#fff;color:#fff" onclick="go('collection')">Mais vendidos</button>
-        </div>
-      </div>
-      <div class="hero__media">
-        <span class="hero__badge">Até 57% OFF</span>
-        <img src="https://images.tcdn.com.br/img/img_prod/928620/kit_4_acessrios_turim_esmeralda_dourado_anel_aju_1_20260406143854_daf9f82af309.jpeg" alt="Coleção New York">
-      </div>
+  <section class="hero-slider" id="heroSlider" aria-label="Destaques">
+    <div class="hero-track">
+      <a class="hero-slide" onclick="go('collection')">
+        <picture>
+          <source media="(max-width:640px)" srcset="3joias-M.jpg">
+          <img src="3joias.jpg" alt="3 Joias por R$ 189,99">
+        </picture>
+      </a>
+      <a class="hero-slide" onclick="go('collection')">
+        <picture>
+          <source media="(max-width:640px)" srcset="braceletes-m.jpg">
+          <img src="braceletes.jpg" alt="2 Braceletes exclusivos">
+        </picture>
+      </a>
+      <a class="hero-slide" onclick="go('collection')">
+        <picture>
+          <source media="(max-width:640px)" srcset="new-york.jpg">
+          <img src="newyork.jpg" alt="Coleção New York">
+        </picture>
+      </a>
     </div>
+    <button class="hero-arrow prev" type="button" aria-label="Anterior">&#8249;</button>
+    <button class="hero-arrow next" type="button" aria-label="Próximo">&#8250;</button>
+    <div class="hero-dots" id="heroDots"></div>
   </section>
 
   <section class="benefits">
@@ -726,11 +746,14 @@ body{background:
   <!-- Banner principal -->
   <section class="section banners" style="padding-top:0;padding-bottom:0">
     <div class="wrap">
-      <a class="banner-full" onclick="go('collection')">
-        <picture>
-          <source media="(max-width:640px)" srcset="new-york.jpg">
-          <img src="newyork.jpg" alt="Coleção New York" loading="lazy">
-        </picture>
+      <a class="banner-hero" onclick="go('collection')">
+        <img src="https://images.tcdn.com.br/img/img_prod/928620/6a15dd70b404f_colecaoNewYork.jpg" alt="Coleção New York">
+        <div class="banner-hero__c">
+          <span class="eyebrow">Coleção exclusiva</span>
+          <h2>New York</h2>
+          <p>O brilho que define a sua noite — peças statement em zircônia e banho dourado.</p>
+          <span class="banner-btn">Eu quero &#8594;</span>
+        </div>
       </a>
     </div>
   </section>
@@ -751,18 +774,20 @@ body{background:
   <!-- Banner secundário (3 promoções) -->
   <section class="section banners" style="padding-top:0;padding-bottom:0">
     <div class="wrap">
-      <a class="banner-full" onclick="go('collection')">
-        <picture>
-          <source media="(max-width:640px)" srcset="3joias-M.jpg">
-          <img src="3joias.jpg" alt="3 Joias por R$ 189,99" loading="lazy">
-        </picture>
-      </a>
-      <a class="banner-full" onclick="go('collection')">
-        <picture>
-          <source media="(max-width:640px)" srcset="braceletes-m.jpg">
-          <img src="braceletes.jpg" alt="2 Braceletes exclusivos" loading="lazy">
-        </picture>
-      </a>
+      <div class="banner-row">
+        <a class="banner-item" onclick="go('collection')">
+          <img src="https://images.tcdn.com.br/img/img_prod/928620/kit_4_acessrios_turim_esmeralda_dourado_anel_aju_1_20260406143854_daf9f82af309.jpeg" alt="Ofertas">
+          <div class="banner-item__c"><span class="eyebrow">Ofertas da semana</span><h3>Até 57% OFF</h3><span class="banner-btn">Comprar</span></div>
+        </a>
+        <a class="banner-item" onclick="go('collection')">
+          <img src="https://images.tcdn.com.br/img/img_prod/928620/kit_colar_e_brinco_de_zircnia_corao_esmeralda_arie_1_20260215164451_5cc005afde3d.jpg" alt="Kits">
+          <div class="banner-item__c"><span class="eyebrow">Conjuntos completos</span><h3>Kits a partir de R$ 74,90</h3><span class="banner-btn">Comprar</span></div>
+        </a>
+        <a class="banner-item" onclick="go('collection')">
+          <img src="https://images.tcdn.com.br/img/img_prod/928620/kit_brinco_anel_regulavel_e_bracelete_lunna_de_zir_1_20260121092346_e251bcb27288.jpeg" alt="Grupo VIP">
+          <div class="banner-item__c"><span class="eyebrow">Brinde + cashback</span><h3>Grupo VIP</h3><span class="banner-btn">Participar</span></div>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -1455,9 +1480,38 @@ function setupReveal(){
   items.forEach(el=>{el.classList.add('reveal');io.observe(el);});
 }
 
+/* ===================== HERO SLIDER ===================== */
+function setupHeroSlider(){
+  const slider=document.getElementById('heroSlider');
+  if(!slider)return;
+  const track=slider.querySelector('.hero-track');
+  const slides=[...slider.querySelectorAll('.hero-slide')];
+  const dotsWrap=document.getElementById('heroDots');
+  let i=0,timer=null;
+  slides.forEach((_,n)=>{
+    const b=document.createElement('button');
+    b.type='button';b.setAttribute('aria-label','Ir para o banner '+(n+1));
+    b.onclick=()=>{go2(n);reset();};
+    dotsWrap.appendChild(b);
+  });
+  const dots=[...dotsWrap.children];
+  function go2(n){
+    i=(n+slides.length)%slides.length;
+    track.style.transform='translateX('+(-i*100)+'%)';
+    dots.forEach((d,k)=>d.classList.toggle('active',k===i));
+  }
+  function reset(){clearInterval(timer);timer=setInterval(()=>go2(i+1),5000);}
+  slider.querySelector('.hero-arrow.next').onclick=()=>{go2(i+1);reset();};
+  slider.querySelector('.hero-arrow.prev').onclick=()=>{go2(i-1);reset();};
+  slider.addEventListener('mouseenter',()=>clearInterval(timer));
+  slider.addEventListener('mouseleave',reset);
+  go2(0);reset();
+}
+
 // init first PDP so it's never empty
 openProduct('lunna');go('home');
 setupReveal();
+setupHeroSlider();
 </script>
 </body>
 </html>
