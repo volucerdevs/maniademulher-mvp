@@ -534,6 +534,12 @@ body{background:
 .banner-btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;background:#fff;color:var(--espresso);padding:12px 24px;border-radius:var(--r-pill);width:fit-content;box-shadow:0 8px 18px rgba(0,0,0,.2);transition:transform .3s,background .3s,color .3s}
 .banner-item .banner-btn{background:var(--rose);color:#fff;padding:10px 20px}
 .banner-hero:hover .banner-btn,.banner-item:hover .banner-btn{transform:translateY(-2px)}
+/* full-bleed promo banner (creative com texto embutido) */
+.banner-full{display:block;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh);margin-bottom:18px;cursor:pointer}
+.banner-full picture,.banner-full img{display:block;width:100%;height:auto}
+.banner-full img{transition:transform .8s}
+.banner-full:hover img{transform:scale(1.03)}
+.banner-full:last-child{margin-bottom:0}
 @media(max-width:860px){
   .banner-row{grid-template-columns:1fr}
   .banner-hero{aspect-ratio:16/10}
@@ -720,14 +726,11 @@ body{background:
   <!-- Banner principal -->
   <section class="section banners" style="padding-top:0;padding-bottom:0">
     <div class="wrap">
-      <a class="banner-hero" onclick="go('collection')">
-        <img src="https://images.tcdn.com.br/img/img_prod/928620/6a15dd70b404f_colecaoNewYork.jpg" alt="Coleção New York">
-        <div class="banner-hero__c">
-          <span class="eyebrow">Coleção exclusiva</span>
-          <h2>New York</h2>
-          <p>O brilho que define a sua noite — peças statement em zircônia e banho dourado.</p>
-          <span class="banner-btn">Eu quero &#8594;</span>
-        </div>
+      <a class="banner-full" onclick="go('collection')">
+        <picture>
+          <source media="(max-width:640px)" srcset="new-york.jpg">
+          <img src="newyork.jpg" alt="Coleção New York" loading="lazy">
+        </picture>
       </a>
     </div>
   </section>
@@ -748,20 +751,18 @@ body{background:
   <!-- Banner secundário (3 promoções) -->
   <section class="section banners" style="padding-top:0;padding-bottom:0">
     <div class="wrap">
-      <div class="banner-row">
-        <a class="banner-item" onclick="go('collection')">
-          <img src="https://images.tcdn.com.br/img/img_prod/928620/kit_4_acessrios_turim_esmeralda_dourado_anel_aju_1_20260406143854_daf9f82af309.jpeg" alt="Ofertas">
-          <div class="banner-item__c"><span class="eyebrow">Ofertas da semana</span><h3>Até 57% OFF</h3><span class="banner-btn">Comprar</span></div>
-        </a>
-        <a class="banner-item" onclick="go('collection')">
-          <img src="https://images.tcdn.com.br/img/img_prod/928620/kit_colar_e_brinco_de_zircnia_corao_esmeralda_arie_1_20260215164451_5cc005afde3d.jpg" alt="Kits">
-          <div class="banner-item__c"><span class="eyebrow">Conjuntos completos</span><h3>Kits a partir de R$ 74,90</h3><span class="banner-btn">Comprar</span></div>
-        </a>
-        <a class="banner-item" onclick="go('collection')">
-          <img src="https://images.tcdn.com.br/img/img_prod/928620/kit_brinco_anel_regulavel_e_bracelete_lunna_de_zir_1_20260121092346_e251bcb27288.jpeg" alt="Grupo VIP">
-          <div class="banner-item__c"><span class="eyebrow">Brinde + cashback</span><h3>Grupo VIP</h3><span class="banner-btn">Participar</span></div>
-        </a>
-      </div>
+      <a class="banner-full" onclick="go('collection')">
+        <picture>
+          <source media="(max-width:640px)" srcset="3joias-M.jpg">
+          <img src="3joias.jpg" alt="3 Joias por R$ 189,99" loading="lazy">
+        </picture>
+      </a>
+      <a class="banner-full" onclick="go('collection')">
+        <picture>
+          <source media="(max-width:640px)" srcset="braceletes-m.jpg">
+          <img src="braceletes.jpg" alt="2 Braceletes exclusivos" loading="lazy">
+        </picture>
+      </a>
     </div>
   </section>
 
